@@ -1,0 +1,129 @@
+fileFormatVersion: 2
+guid: 2c45f2405ac92374186002975e92cbfc
+timeCreated: 1481268244
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Wardrobe 1
+    100004: Wardrobe_door_01
+    100006: Wardrobe_door_02
+    100008: Wardrobe_door_03
+    100010: Wardrobe_door_04
+    100012: Wardrobe_door_05
+    100014: Wardrobe_door_06
+    100016: Wardrobe_door_07
+    100018: Wardrobe_door_08
+    100020: Wardrobe_door_09
+    100022: Wardrobe_door_10
+    400000: //RootNode
+    400002: Wardrobe 1
+    400004: Wardrobe_door_01
+    400006: Wardrobe_door_02
+    400008: Wardrobe_door_03
+    400010: Wardrobe_door_04
+    400012: Wardrobe_door_05
+    400014: Wardrobe_door_06
+    400016: Wardrobe_door_07
+    400018: Wardrobe_door_08
+    400020: Wardrobe_door_09
+    400022: Wardrobe_door_10
+    2300000: Wardrobe 1
+    2300002: Wardrobe_door_01
+    2300004: Wardrobe_door_02
+    2300006: Wardrobe_door_03
+    2300008: Wardrobe_door_04
+    2300010: Wardrobe_door_05
+    2300012: Wardrobe_door_06
+    2300014: Wardrobe_door_07
+    2300016: Wardrobe_door_08
+    2300018: Wardrobe_door_09
+    2300020: Wardrobe_door_10
+    3300000: Wardrobe 1
+    3300002: Wardrobe_door_01
+    3300004: Wardrobe_door_02
+    3300006: Wardrobe_door_03
+    3300008: Wardrobe_door_04
+    3300010: Wardrobe_door_05
+    3300012: Wardrobe_door_06
+    3300014: Wardrobe_door_07
+    3300016: Wardrobe_door_08
+    3300018: Wardrobe_door_09
+    3300020: Wardrobe_door_10
+    4300000: Wardrobe_door_01
+    4300002: Wardrobe_door_02
+    4300004: Wardrobe_door_03
+    4300006: Wardrobe_door_04
+    4300008: Wardrobe_door_05
+    4300010: Wardrobe_door_06
+    4300012: Wardrobe_door_07
+    4300014: Wardrobe_door_08
+    4300016: Wardrobe_door_09
+    4300018: Wardrobe_door_10
+    4300020: Wardrobe
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
