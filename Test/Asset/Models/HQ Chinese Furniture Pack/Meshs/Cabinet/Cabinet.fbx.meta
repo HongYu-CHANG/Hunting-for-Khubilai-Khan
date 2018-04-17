@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 6cecdcfc64f1a0a41afdfd0480b8d1fa
+timeCreated: 1481268047
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cabinet 1
+    100004: Cabinet_drawer01
+    100006: Cabinet_drawer02
+    100008: Cabinet_drawer03
+    100010: Cabinet_drawer04
+    100012: Cabinet_drawer05
+    100014: Cabinet_drawer06
+    100016: Cabinet_drawer07
+    100018: Cabinet_drawer08
+    100020: Cabinet_drawer09
+    100022: Cabinet_drawer10
+    100024: Cabinet_drawer11
+    100026: Cabinet_drawer12
+    100028: Cabinet_drawer13
+    100030: Cabinet_drawer14
+    100032: Cabinet_drawer15
+    100034: Cabinet_drawer16
+    100036: Cabinet_drawer17
+    100038: Cabinet_drawer18
+    100040: Cabinet_drawer19
+    100042: Cabinet_drawer20
+    400000: //RootNode
+    400002: Cabinet 1
+    400004: Cabinet_drawer01
+    400006: Cabinet_drawer02
+    400008: Cabinet_drawer03
+    400010: Cabinet_drawer04
+    400012: Cabinet_drawer05
+    400014: Cabinet_drawer06
+    400016: Cabinet_drawer07
+    400018: Cabinet_drawer08
+    400020: Cabinet_drawer09
+    400022: Cabinet_drawer10
+    400024: Cabinet_drawer11
+    400026: Cabinet_drawer12
+    400028: Cabinet_drawer13
+    400030: Cabinet_drawer14
+    400032: Cabinet_drawer15
+    400034: Cabinet_drawer16
+    400036: Cabinet_drawer17
+    400038: Cabinet_drawer18
+    400040: Cabinet_drawer19
+    400042: Cabinet_drawer20
+    2300000: Cabinet 1
+    2300002: Cabinet_drawer01
+    2300004: Cabinet_drawer02
+    2300006: Cabinet_drawer03
+    2300008: Cabinet_drawer04
+    2300010: Cabinet_drawer05
+    2300012: Cabinet_drawer06
+    2300014: Cabinet_drawer07
+    2300016: Cabinet_drawer08
+    2300018: Cabinet_drawer09
+    2300020: Cabinet_drawer10
+    2300022: Cabinet_drawer11
+    2300024: Cabinet_drawer12
+    2300026: Cabinet_drawer13
+    2300028: Cabinet_drawer14
+    2300030: Cabinet_drawer15
+    2300032: Cabinet_drawer16
+    2300034: Cabinet_drawer17
+    2300036: Cabinet_drawer18
+    2300038: Cabinet_drawer19
+    2300040: Cabinet_drawer20
+    3300000: Cabinet 1
+    3300002: Cabinet_drawer01
+    3300004: Cabinet_drawer02
+    3300006: Cabinet_drawer03
+    3300008: Cabinet_drawer04
+    3300010: Cabinet_drawer05
+    3300012: Cabinet_drawer06
+    3300014: Cabinet_drawer07
+    3300016: Cabinet_drawer08
+    3300018: Cabinet_drawer09
+    3300020: Cabinet_drawer10
+    3300022: Cabinet_drawer11
+    3300024: Cabinet_drawer12
+    3300026: Cabinet_drawer13
+    3300028: Cabinet_drawer14
+    3300030: Cabinet_drawer15
+    3300032: Cabinet_drawer16
+    3300034: Cabinet_drawer17
+    3300036: Cabinet_drawer18
+    3300038: Cabinet_drawer19
+    3300040: Cabinet_drawer20
+    4300000: Cabinet
+    4300002: Cabinet_drawer01
+    4300004: Cabinet_drawer02
+    4300006: Cabinet_drawer03
+    4300008: Cabinet_drawer04
+    4300010: Cabinet_drawer05
+    4300012: Cabinet_drawer06
+    4300014: Cabinet_drawer07
+    4300016: Cabinet_drawer08
+    4300018: Cabinet_drawer09
+    4300020: Cabinet_drawer10
+    4300022: Cabinet_drawer11
+    4300024: Cabinet_drawer12
+    4300026: Cabinet_drawer13
+    4300028: Cabinet_drawer14
+    4300030: Cabinet_drawer15
+    4300032: Cabinet_drawer16
+    4300034: Cabinet_drawer17
+    4300036: Cabinet_drawer18
+    4300038: Cabinet_drawer19
+    4300040: Cabinet_drawer20
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
