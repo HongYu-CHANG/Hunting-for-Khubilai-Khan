@@ -6,7 +6,7 @@ using System.IO;
 using System.IO.Ports;
 using System.Threading;
 
-public class OneBowControl : MonoBehaviour
+public class oneBowControl : MonoBehaviour
 {
 
 	//arrow
@@ -52,12 +52,35 @@ public class OneBowControl : MonoBehaviour
 		}
 		else if (twoDiff < 0 && twoDiff > -100)//緩緩鬆弓
 		{
-
+			arrowClone.transform.position += bowMiddle.transform.forward.normalized * twoDiff * Time.deltaTime;
+			if(nowData == 0)
+				Destroy(arrowClone);
 		}
 		else //射箭
 		{
 			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
 		}
+		/*
+		if (Input.GetKeyDown(KeyCode.A))
+		{
+			arrowClone = Instantiate(arrow, bowMiddle.transform.position, bowMiddle.transform.rotation);
+			arrowClone.active = true;
+			arrowClone.transform.up = bowMiddle.transform.forward;
+			temp = true;
+
+		}
+		if (Input.GetKeyUp(KeyCode.A))
+		{
+			temp = false;
+		}
+		if (temp)
+		{ arrowClone.transform.position -= bowMiddle.transform.forward.normalized * pullBackCoefficient * Time.deltaTime; }
+		else
+		{
+			arrowClone.transform.position += bowMiddle.transform.forward.normalized * 1000 * Time.deltaTime;
+			Destroy(arrowClone);
+		}*/
+		
 	}
 
 	public int PlayerStatus()
