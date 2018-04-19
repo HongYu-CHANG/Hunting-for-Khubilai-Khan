@@ -10,7 +10,9 @@ public class horseControl : MonoBehaviour {
 
 	public GameObject playerPosition;
 	public GameObject playerController;
-	private float disOfPlayerAndHorse;
+	private float XdisOfPlayerAndHorse;
+	private float YdisOfPlayerAndHorse;
+	private float ZdisOfPlayerAndHorse;
 	private Animator _animator;
 	private int pressure;
 
@@ -21,7 +23,9 @@ public class horseControl : MonoBehaviour {
 	{
 		//new Thread(Uno.connectToArdunio).Start
 		_animator = this.GetComponent<Animator>();
-		disOfPlayerAndHorse = 4f;
+		XdisOfPlayerAndHorse = -1.5f;
+		YdisOfPlayerAndHorse = 4f;
+		ZdisOfPlayerAndHorse = -1.2f;
 	}
 
 	// Update is called once per frame
@@ -36,13 +40,17 @@ public class horseControl : MonoBehaviour {
 			transform.forward = playerPosition.transform.forward;
 			transform.position -= transform.up.normalized * 2f;
 			transform.position -= transform.forward.normalized * 1.3f;
-			Debug.Log((playerController.transform.position.y - transform.position.y));
-			if((playerController.transform.position.y - transform.position.y) > disOfPlayerAndHorse)
-				disOfPlayerAndHorse = playerController.transform.position.y - transform.position.y;
+			
+			if((playerController.transform.position.x - transform.position.x) > XdisOfPlayerAndHorse)
+				XdisOfPlayerAndHorse = playerController.transform.position.x - transform.position.x;
+			if ((playerController.transform.position.y - transform.position.y) > YdisOfPlayerAndHorse)
+				YdisOfPlayerAndHorse = playerController.transform.position.y - transform.position.y;
+			if ((playerController.transform.position.z - transform.position.z) > ZdisOfPlayerAndHorse)
+				ZdisOfPlayerAndHorse = playerController.transform.position.z - transform.position.z;
 		}
 		transform.eulerAngles= new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);//保持馬的水平
-		playerController.transform.position = new Vector3(playerController.transform.position.x, transform.position.y + disOfPlayerAndHorse, playerController.transform.position.z);
-		
+		playerController.transform.position = new Vector3(transform.position.x + XdisOfPlayerAndHorse, transform.position.y + YdisOfPlayerAndHorse, transform.position.z + ZdisOfPlayerAndHorse);
+		//馬的XZ位置需再FOR騎馬機調整
 		pressure = 0;//Uno.ReceiveData();
 		if (pressure < 100) // 走路
 		{
