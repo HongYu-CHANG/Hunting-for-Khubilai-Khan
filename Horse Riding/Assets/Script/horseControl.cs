@@ -8,10 +8,12 @@ using System.Threading;
 
 public class horseControl : MonoBehaviour {
 
-	public SteamVR_TrackedObject playerHead;
-
+	public GameObject playerPosition;
+	public GameObject playerController;
+	private float disOfPlayerAndHorse;
 	private Animator _animator;
 	private int pressure;
+
 	// Arduino connection
 	private CommunicateWithArduino Uno = new CommunicateWithArduino();
 	
@@ -19,6 +21,7 @@ public class horseControl : MonoBehaviour {
 	{
 		//new Thread(Uno.connectToArdunio).Start
 		_animator = this.GetComponent<Animator>();
+		disOfPlayerAndHorse = 4f;
 	}
 
 	// Update is called once per frame
@@ -28,14 +31,18 @@ public class horseControl : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.H))
 		{
 			Debug.Log("Press H");
-			transform.position = playerHead.transform.position;
-			//we want to move horse backward, how?
-			//transform.position = new Vector3(playerHead.transform.position.x, playerHead.transform.position.y, playerHead.transform.position.z);
-			Debug.Log("position: " + transform.position);
-			transform.forward = playerHead.transform.forward;
+
+			transform.position = playerPosition.transform.position;
+			transform.forward = playerPosition.transform.forward;
 			transform.position -= transform.up.normalized * 2f;
 			transform.position -= transform.forward.normalized * 1.3f;
+			Debug.Log((playerController.transform.position.y - transform.position.y));
+			if((playerController.transform.position.y - transform.position.y) > disOfPlayerAndHorse)
+				disOfPlayerAndHorse = playerController.transform.position.y - transform.position.y;
 		}
+		transform.eulerAngles= new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);//保持馬的水平
+		playerController.transform.position = new Vector3(playerController.transform.position.x, transform.position.y + disOfPlayerAndHorse, playerController.transform.position.z);
+		
 		pressure = 0;//Uno.ReceiveData();
 		if (pressure < 100) // 走路
 		{
