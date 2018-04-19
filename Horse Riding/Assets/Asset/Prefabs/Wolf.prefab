@@ -890,15 +890,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1482975524345800}
-  m_LocalRotation: {x: -0.011598037, y: -0, z: -0, w: 0.99993277}
-  m_LocalPosition: {x: 109.39105, y: -0.72430134, z: 76.57178}
+  m_LocalRotation: {x: -0.011442007, y: -0.16346805, z: 0.0018960362, w: 0.9864805}
+  m_LocalPosition: {x: 109.50125, y: -0.72394943, z: 76.587036}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4670509396707884}
   - {fileID: 4904927861906676}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -1.3290001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.258, y: -18.822, z: 0.42900002}
 --- !u!4 &4072176142233626
 Transform:
   m_ObjectHideFlags: 1
@@ -1650,6 +1650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ccf62c08121114a9c7f470e2813230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horse: {fileID: 0}
 --- !u!114 &114289960741402420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1661,6 +1662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ccf62c08121114a9c7f470e2813230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horse: {fileID: 0}
 --- !u!137 &137888127975383658
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

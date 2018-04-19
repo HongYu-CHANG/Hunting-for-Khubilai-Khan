@@ -10,11 +10,12 @@ public class horseControl : MonoBehaviour {
 
 	public GameObject playerPosition;
 	public GameObject playerController;
+	public FixedEnvironmentController speedController;
 	private float XdisOfPlayerAndHorse;
 	private float YdisOfPlayerAndHorse;
 	private float ZdisOfPlayerAndHorse;
 	private Animator _animator;
-	private int pressure;
+	public int pressure;
 
 	// Arduino connection
 	private CommunicateWithArduino Uno = new CommunicateWithArduino();
@@ -51,18 +52,21 @@ public class horseControl : MonoBehaviour {
 		transform.eulerAngles= new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);//保持馬的水平
 		playerController.transform.position = new Vector3(transform.position.x + XdisOfPlayerAndHorse, transform.position.y + YdisOfPlayerAndHorse, transform.position.z + ZdisOfPlayerAndHorse);
 		//馬的XZ位置需再FOR騎馬機調整
-		pressure = 0;//Uno.ReceiveData();
+		//pressure = 0;//Uno.ReceiveData();
 		if (pressure < 100) // 走路
 		{
 			_animator.SetInteger("horseSpeed", 1);
+			speedController.setSpeed(5);
 		}
 		else if (pressure < 200) //小跑步
 		{
 			_animator.SetInteger("horseSpeed", 2);
+			speedController.setSpeed(10);
 		}
 		else //瘋狂跑
 		{ 
 			_animator.SetInteger("horseSpeed", 3);
+			speedController.setSpeed(20);
 		}
 	}
 

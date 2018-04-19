@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class animalControl : MonoBehaviour {
 
+	public GameObject horse;
 	private Animator _animator;
 	private bool isDead;
 
@@ -12,14 +13,13 @@ public class animalControl : MonoBehaviour {
 	{
 		_animator = this.GetComponent<Animator>();
 		isDead = false;
-
-
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if(!isDead) this.transform.position += this.transform.forward.normalized * 5 * Time.deltaTime;
+		transform.forward += horse.transform.forward.normalized;
+		if (!isDead) this.transform.position += this.transform.forward.normalized * 5 * Time.deltaTime;
 		
 		if (Mathf.Abs(this.transform.eulerAngles.z) >= 70 && Mathf.Abs(this.transform.eulerAngles.z) <= 290)
 		{

@@ -873,15 +873,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1681219087249692}
-  m_LocalRotation: {x: 0.018525925, y: 0.00182468, z: -0.011843108, w: 0.9997566}
-  m_LocalPosition: {x: 111.99, y: -0.21, z: 76.68}
+  m_LocalRotation: {x: 0.020144537, y: 0.15752871, z: -0.008812877, w: 0.98726964}
+  m_LocalPosition: {x: 111.93295, y: -0.20908833, z: 76.69205}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4214065992641990}
   - {fileID: 4231951609116784}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 2.125, y: 0.18400002, z: -1.3540001}
+  m_LocalEulerAnglesHint: {x: 2.4390001, y: 18.118, z: -0.634}
 --- !u!4 &4078406166274808
 Transform:
   m_ObjectHideFlags: 1
@@ -1578,6 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ccf62c08121114a9c7f470e2813230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horse: {fileID: 0}
 --- !u!137 &137566634258106060
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
