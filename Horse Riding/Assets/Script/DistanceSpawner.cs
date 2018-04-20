@@ -16,13 +16,13 @@ namespace ZenvaVR
         public float genDistance;
 
         // direction of the spawner
-        public Vector3 direction;
+        //public Vector3 direction;
 
         // min gap
-        public float minGap;
+        //public float minGap;
 
         // max gap
-        public float maxGap;
+        //public float maxGap;
 
         // min scale
         public float minScale = 1;
@@ -31,7 +31,7 @@ namespace ZenvaVR
         public float maxScale = 1;
 
         // spawning / disapp time
-        public float timeStep = 1;
+        //public float timeStep = 1;
 
         // object pool component
         ObjectPool pool;
@@ -39,11 +39,15 @@ namespace ZenvaVR
         // newly generated object
         GameObject newObj;
 
-        // Use this for initialization
-        void Awake()
+		private bool isGenerating;
+
+		// Use this for initialization
+		void Awake()
         {
-            //get the object pool component
-            pool = GetComponent<ObjectPool>();
+			//horse = GameObject.FindWithTag("horse");
+			
+			//get the object pool component
+			pool = GetComponent<ObjectPool>();
 
             //init pool
             pool.InitPool();
@@ -53,34 +57,47 @@ namespace ZenvaVR
             {
                 HandleSpawning();
             }
-
-            //execute spawning and hiding only at certain frequency
-            InvokeRepeating("HandleSpawning", 0, timeStep);
-            InvokeRepeating("HandleHiding", 0, timeStep + 0.5f);
+			isGenerating = false;
+			//execute spawning and hiding only at certain frequency
+			//InvokeRepeating("HandleSpawning", 0, timeStep);
+            //InvokeRepeating("HandleHiding", 0, timeStep + 0.5f);
         }
 
         // Update is called once per frame
         void Update()
         {
-            HandleSpawning();
-            HandleHiding();
+			HandleSpawning();
+            //HandleHiding();
         }
 
         void HandleSpawning()
         {
-            // Check distance
-            if (Vector3.Distance(reference.position, transform.position) <= genDistance)
+			if (!isGenerating)
+				StartCoroutine(RandomSpawn());
+
+			// Check distance
+			/*if (Vector3.Distance(reference.position, transform.position) <= genDistance)
             {
                 // Spawn object
-                Spawn();
+                
 
                 // Reposition distance spawner
-                Reposition();
-            }
-        }
+                //Reposition();
+            }*/
+		}
 
-        //handle deactivation of objects if they are too far
-        void HandleHiding()
+		IEnumerator RandomSpawn()
+		{
+			isGenerating = true;
+			UnityEngine.Random.InitState(System.Guid.NewGuid().GetHashCode());
+			yield return new WaitForSeconds(UnityEngine.Random.Range(1.0f, 5.0f));
+			isGenerating = false;
+			Spawn();
+
+		}
+
+		//handle deactivation of objects if they are too far
+		/*void HandleHiding()
         {
             // get the active objects of the pool
             List<GameObject> actives = pool.GetAllActive();
@@ -92,13 +109,13 @@ namespace ZenvaVR
                 if(Vector3.Distance(reference.position, actives[i].transform.position) > genDistance)
                 {
                     // deactivate them
-                    actives[i].SetActive(false);
+                    //actives[i].SetActive(false);
                 }
             }
-        }
+        }*/
 
-        // reposition the spawner to it's next location
-        void Reposition()
+		// reposition the spawner to it's next location
+		/*void Reposition()
         {
             // move: 1) size of the new object 2) gap
 
@@ -128,18 +145,18 @@ namespace ZenvaVR
             transform.Translate(direction * total, Space.World);
             
         }
-
+		*/
         // spawn a new object
         void Spawn()
         {
             //get an object from the pool
             newObj = pool.GetObj();
 
-            //set position
-            newObj.transform.position = transform.position;
-
-            //generate a random scale number
-            float scale = UnityEngine.Random.Range(minScale, maxScale);
+			//set position
+			newObj.transform.position = new Vector3(transform.position.x + UnityEngine.Random.Range(-50.0f, 50.0f), transform.position.y + 11.0f, transform.position.z + UnityEngine.Random.Range(-50.0f, 50.0f));
+			Debug.Log(newObj.transform.position);
+			//generate a random scale number
+			float scale = UnityEngine.Random.Range(minScale, maxScale);
 
             //scale object
             newObj.transform.localScale = Vector3.one * scale;

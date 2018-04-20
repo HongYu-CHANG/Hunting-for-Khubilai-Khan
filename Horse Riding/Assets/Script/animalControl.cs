@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class animalControl : MonoBehaviour {
 
-	public GameObject horse;
+	private GameObject horse;
 	private Animator _animator;
 	private bool isDead;
 
@@ -18,6 +18,7 @@ public class animalControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		horse = GameObject.FindWithTag("horse");
 		transform.forward += horse.transform.forward.normalized;
 		if (!isDead) this.transform.position += this.transform.forward.normalized * 5 * Time.deltaTime;
 		

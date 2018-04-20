@@ -57,8 +57,9 @@ namespace ZenvaVR
         // retrieve an object from the pool
         public GameObject GetObj()
         {
-            // search our list for an inactive object
-            for(int i = 0; i < pooledObjects.Count; i++) {
+			// search our list for an inactive object
+            for(int i = 0; i < pooledObjects.Count; i++)
+			{
 
                 // if we find an inactive object
                 if(!pooledObjects[i].activeInHierarchy)
