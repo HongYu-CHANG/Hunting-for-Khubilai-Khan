@@ -1,0 +1,46 @@
+故宮騎射 2018.04.23(一)
+
+【會議時老師給的建議】
+1.放人的model坐在馬上面，因為在VR往下看會看到馬鞍 (也許在demo時可以de有人&沒人的比較)
+2.調整馬的移動temple，把騎馬機的temple合在一起
+(弘瑜：人&馬垂直距離超過一定量才調camera，因為人在騎馬機上，HMD就已經會跟著晃了)
+
+※有給老師看目前馬&人位置會有offset狀況，還ok
+
+※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
+
+【檔案】
+
+
+【馬】
+
+
+【弓】
+
+
+【箭】
+
+
+【動物】
+已解決:目前產生出來的動物自己消失時，會造成objectpool 中的list找不到該物件造成Error的情況，以後的動物都會產生不出來
+解法:在GetObj中判斷目前的物件是否為null的，是的話就把現在那個刪除掉，然後再抓下一個
+
+
+【場景】
+
+
+※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
+
+【預計明天工作】
+Spawner 裡面用個動物的list去隨機產生防止讓使用者覺得同種動物都從同個地方產生
+(射箭!?)
+
+【可能放最後的工作】
+調整rotary encoder和三種狀態之間的控制
+氣壓感測器→影響 場景速度、騎馬機
+
+ 
+【參考資料】
+List remove item https://stackoverflow.com/questions/10018957/c-sharp-how-to-remove-item-from-list
+What is a Null Reference Exception?  https://docs.unity3d.com/Manual/NullReferenceException.html
+ 

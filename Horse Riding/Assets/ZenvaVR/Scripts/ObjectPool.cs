@@ -61,7 +61,13 @@ namespace ZenvaVR
             for(int i = 0; i < pooledObjects.Count; i++)
 			{
 
-                // if we find an inactive object
+				if (pooledObjects[i] == null)
+				{
+					pooledObjects.RemoveAt(i);
+					continue;
+				}
+
+				// if we find an inactive object
                 if(!pooledObjects[i].activeInHierarchy)
                 {
                     //enable it (set it to active)
