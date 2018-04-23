@@ -153,8 +153,7 @@ namespace ZenvaVR
             newObj = pool.GetObj();
 
 			//set position
-			newObj.transform.position = new Vector3(transform.position.x + UnityEngine.Random.Range(-50.0f, 50.0f), transform.position.y + 11.0f, transform.position.z + UnityEngine.Random.Range(-50.0f, 50.0f));
-			Debug.Log(newObj.transform.position);
+			newObj.transform.position = new Vector3(transform.position.x + UnityEngine.Random.Range(-50.0f, 50.0f), transform.position.y, transform.position.z + UnityEngine.Random.Range(-50.0f, 50.0f));
 			//generate a random scale number
 			float scale = UnityEngine.Random.Range(minScale, maxScale);
 

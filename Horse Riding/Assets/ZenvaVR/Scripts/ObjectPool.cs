@@ -7,13 +7,10 @@ namespace ZenvaVR
     public class ObjectPool : MonoBehaviour {
 
         //prefab that the pool will use
-        public GameObject poolPrefab;
-
-        //initial number of element
-        public int initialNum = 10;
+        public List<GameObject> poolPrefab;
 
         //collection
-        List<GameObject> pooledObjects;
+        private List<GameObject> pooledObjects;
 
         //init pool
         void Awake()
@@ -31,19 +28,15 @@ namespace ZenvaVR
             //init list
             pooledObjects = new List<GameObject>();
 
-            // create this initial number of objects
-            for (int i = 0; i < initialNum; i++)
-            {
-                // create a new object
-                CreateObj();
-            }
-        }
+			CreateObj();
+		}
 
         //create a new object
         GameObject CreateObj()
         {
-            // create a new object
-            GameObject newObj = Instantiate(poolPrefab);
+			UnityEngine.Random.InitState(System.Guid.NewGuid().GetHashCode());
+			// create a new object
+			GameObject newObj = Instantiate(poolPrefab[selectAnimal(UnityEngine.Random.Range(0, 71))]);
 
             // set this new object to inactive
             newObj.SetActive(false);
@@ -106,5 +99,24 @@ namespace ZenvaVR
 
             return activeObjs;
         }
+
+		private int selectAnimal(int parameter)
+		{
+			Debug.Log(parameter);
+			if (parameter <= 10)//0~10 Rabbit
+				return 0;
+			else if (parameter <= 20)//11~20 Boar
+				return 1;
+			else if (parameter <= 30)//21~30 Wolf
+				return 2;
+			else if (parameter <= 40)//31~40 Ibex
+				return 3;
+			else if (parameter <= 50)//41~50 Goat
+				return 4;
+			else if (parameter <= 60)//51~60 Deer
+				return 5;
+			else //61~70 Deer2
+				return 6;
+		}
     }
 }
