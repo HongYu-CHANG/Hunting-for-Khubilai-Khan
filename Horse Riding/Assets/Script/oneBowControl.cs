@@ -6,102 +6,52 @@ using System.IO;
 using System.IO.Ports;
 using System.Threading;
 
-public class oneBowControl : MonoBehaviour
+public class OneBowControl : MonoBehaviour
 {
-
-	//arrow
-	public GameObject arrow;
-	public GameObject bowMiddle;
-	private GameObject arrowClone;
 	
-
-	public float arrowShootCoefficient;
-	public float pullBackCoefficient;
-
-	//rotary encoder
-	private float previousData;
-	private float nowData;
+	public GameObject arrow;
+	private GameObject arrowClone;
+	private bowMiddle bowMiddle;
 
 	// Arduino connection
 	private CommunicateWithArduino Uno = new CommunicateWithArduino();
 
-	private bool hasArrow;
-
 	void Start()
 	{
 		new Thread(Uno.connectToArdunio).Start();
-		previousData = 0;
-		hasArrow = false;
 	}
 
 	void Update()
 	{
-		
-		nowData = Uno.ReceiveData();
-		//Debug.Log("nowData = " + nowData);
-		float twoDiff = nowData - previousData;
-		//Debug.Log("twoDiff = " + twoDiff);
-		previousData = nowData;
 
-		if (twoDiff == 0)//沒拉弓
-		{ }
-		else if (twoDiff > 20)//拉弓
+		switch (PlayerStatus())
 		{
-			if (!hasArrow)
-			{
-				
-				arrowClone = Instantiate(arrow, bowMiddle.transform.position, bowMiddle.transform.rotation);
-				arrowClone.transform.parent = gameObject.transform;
-				arrowClone.active = true;
-				arrowClone.transform.position = bowMiddle.transform.position;
-				hasArrow = true;
-			}
-			
-			arrowClone.transform.up = bowMiddle.transform.forward;
-			arrowClone.transform.position -= bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
-
-		}
-		else if (twoDiff < 0 && twoDiff > -1000)//緩緩鬆弓
-		{
-			if (hasArrow)
-			{
-				Debug.LogWarning("hasArrow twoDiff = " + twoDiff);
-				arrowClone.transform.position += bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
-				if (nowData > -100 && nowData < 100)
+			case 1://拉弓 : 產生箭 箭往後(根據rotary encoder)
+				if (Input.GetKeyDown(KeyCode.A))//產生箭
 				{
-					Destroy(arrowClone);
-					hasArrow = false;
+					bowMiddle = gameObject.GetComponentInChildren<bowMiddle>();
+					arrowClone = Instantiate(arrow, bowMiddle.transform.position, bowMiddle.transform.rotation);
+					arrowClone.active = true;
+					arrowClone.transform.up = bowMiddle.transform.forward;
 				}
-			}
-			
-		}
-		else //射箭
-		{
-			//arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
-			//hasArrow = false;
+
+
+				break;
+
+			case 2://放箭 : 射
+
+				break;
+
+			case 3://縮 : 箭消失
+
+				break;
+
+			default:
+
+				break;
 		}
 
-		/*
-		if (Input.GetKeyDown(KeyCode.A))
-		{
-			arrowClone = Instantiate(arrow, bowMiddle.transform.position, bowMiddle.transform.rotation);
-			arrowClone.active = true;
-			arrowClone.transform.up = bowMiddle.transform.forward;
-			temp = true;
 
-		}
-		if (Input.GetKeyUp(KeyCode.A))
-		{
-			temp = false;
-		}
-		if (temp)
-		{ arrowClone.transform.position -= bowMiddle.transform.forward.normalized * pullBackCoefficient * Time.deltaTime; }
-		else
-		{
-			arrowClone.transform.position += bowMiddle.transform.forward.normalized * pullBackCoefficient * Time.deltaTime;
-			Destroy(arrowClone);
-		}
-		*/
 	}
 
 	public int PlayerStatus()
@@ -113,11 +63,6 @@ public class oneBowControl : MonoBehaviour
 		 * 3. 縮 : 箭消失
 		 * */
 		return 1;
-	}
-	private float ConvertToPullBackCoefficient(float rotaryEncoderData)
-	{
-		//Debug.Log((rotaryEncoderData * 5) / 1600 );
-		return Mathf.Abs((rotaryEncoderData * 5) / 1600 );
 	}
 
 	class CommunicateWithArduino
@@ -132,7 +77,7 @@ public class oneBowControl : MonoBehaviour
 
 			if (connected)
 			{
-				string portChoice = "COM4";
+				string portChoice = "COM5";
 				if (mac)
 				{
 					int p = (int)Environment.OSVersion.Platform;
@@ -156,7 +101,7 @@ public class oneBowControl : MonoBehaviour
 				arduinoController.Handshake = Handshake.None;
 				arduinoController.RtsEnable = true;
 				arduinoController.Open();
-				//Debug.LogWarning(arduinoController);
+				Debug.LogWarning(arduinoController);
 			}
 
 		}
@@ -184,9 +129,9 @@ public class oneBowControl : MonoBehaviour
 			Thread.Sleep(500);
 		}
 
-		public float ReceiveData()
+		public String ReceiveData()
 		{
-			return float.Parse(arduinoController.ReadLine());
+			return arduinoController.ReadLine();
 		}
 	}
 }
