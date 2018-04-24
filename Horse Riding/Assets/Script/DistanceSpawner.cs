@@ -27,59 +27,49 @@ namespace ZenvaVR
         // newly generated object
         GameObject newObj;
 
-		private bool isGenerating;
+    		private bool isGenerating;
 
-		// Use this for initialization
-		void Awake()
+    		// Use this for initialization
+    		void Awake()
         {
-			//get the object pool component
-			pool = GetComponent<ObjectPool>();
-
-            //init pool
+    		    //get the object pool component
+    		    pool = GetComponent<ObjectPool>();
             pool.InitPool();
-
-            //initial population of object
             while (Vector3.Distance(reference.position, transform.position) <= genDistance)
             {
-                HandleSpawning();
+              HandleSpawning();
             }
-			isGenerating = false;
+    	       isGenerating = false;
         }
 
         // Update is called once per frame
         void Update()
         {
-			HandleSpawning();
+    		    HandleSpawning();
         }
 
         void HandleSpawning()
         {
-			if (!isGenerating)
-				StartCoroutine(RandomSpawn());
-		}
+    			if (!isGenerating)
+    				StartCoroutine(RandomSpawn());
+    		}
 
-		IEnumerator RandomSpawn()
-		{
-			isGenerating = true;
-			UnityEngine.Random.InitState(System.Guid.NewGuid().GetHashCode());
-			yield return new WaitForSeconds(UnityEngine.Random.Range(1.0f, 5.0f));
-			isGenerating = false;
-			Spawn();
-		}
+    		IEnumerator RandomSpawn()
+    		{
+    			isGenerating = true;
+    			UnityEngine.Random.InitState(System.Guid.NewGuid().GetHashCode());
+    			yield return new WaitForSeconds(UnityEngine.Random.Range(1.0f, 5.0f));
+    			isGenerating = false;
+    			Spawn();
+    		}
 
         // spawn a new object
         void Spawn()
         {
-            //get an object from the pool
-            newObj = pool.GetObj();
-
-			//set position
-			newObj.transform.position = new Vector3(transform.position.x + UnityEngine.Random.Range(-50.0f, 50.0f), transform.position.y, transform.position.z + UnityEngine.Random.Range(-50.0f, 50.0f));
-			//generate a random scale number
-			float scale = UnityEngine.Random.Range(minScale, maxScale);
-
-            //scale object
-            newObj.transform.localScale = Vector3.one * scale;
+          newObj = pool.GetObj();
+    			newObj.transform.position = new Vector3(transform.position.x + UnityEngine.Random.Range(-50.0f, 50.0f), transform.position.y, transform.position.z + UnityEngine.Random.Range(-50.0f, 50.0f));
+    			float scale = UnityEngine.Random.Range(minScale, maxScale);
+          newObj.transform.localScale = Vector3.one * scale;
         }
     }
 }
