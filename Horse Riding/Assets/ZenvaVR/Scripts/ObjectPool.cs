@@ -102,7 +102,7 @@ namespace ZenvaVR
 
 		private int selectAnimal(int parameter)
 		{
-			Debug.Log(parameter);
+			//Debug.Log(parameter);
 			if (parameter <= 10)//0~10 Rabbit
 				return 0;
 			else if (parameter <= 20)//11~20 Boar

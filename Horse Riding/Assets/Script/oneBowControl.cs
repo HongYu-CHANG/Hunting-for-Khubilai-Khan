@@ -19,48 +19,68 @@ public class oneBowControl : MonoBehaviour
 	public float pullBackCoefficient;
 
 	//rotary encoder
-	private int previousData;
-	private int nowData;
+	private float previousData;
+	private float nowData;
 
 	// Arduino connection
 	private CommunicateWithArduino Uno = new CommunicateWithArduino();
 
-	private bool temp;
+	private bool hasArrow;
 
 	void Start()
 	{
-		//new Thread(Uno.connectToArdunio).Start
+		new Thread(Uno.connectToArdunio).Start();
 		previousData = 0;
-		temp = false;
+		hasArrow = false;
 	}
 
 	void Update()
 	{
-		nowData = 0;//Uno.ReceiveData();
-		int twoDiff = nowData - previousData;
+		
+		nowData = Uno.ReceiveData();
+		//Debug.Log("nowData = " + nowData);
+		float twoDiff = nowData - previousData;
+		//Debug.Log("twoDiff = " + twoDiff);
 		previousData = nowData;
 
 		if (twoDiff == 0)//沒拉弓
 		{ }
-		else if (twoDiff > 0)//拉弓
+		else if (twoDiff > 20)//拉弓
 		{
-			arrowClone = Instantiate(arrow, bowMiddle.transform.position, bowMiddle.transform.rotation);
-			arrowClone.active = true;
+			if (!hasArrow)
+			{
+				
+				arrowClone = Instantiate(arrow, bowMiddle.transform.position, bowMiddle.transform.rotation);
+				arrowClone.transform.parent = gameObject.transform;
+				arrowClone.active = true;
+				arrowClone.transform.position = bowMiddle.transform.position;
+				hasArrow = true;
+			}
+			
 			arrowClone.transform.up = bowMiddle.transform.forward;
-			arrowClone.transform.position -= bowMiddle.transform.forward.normalized * twoDiff * Time.deltaTime;
+			arrowClone.transform.position -= bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
 
 		}
-		else if (twoDiff < 0 && twoDiff > -100)//緩緩鬆弓
+		else if (twoDiff < 0 && twoDiff > -1000)//緩緩鬆弓
 		{
-			arrowClone.transform.position += bowMiddle.transform.forward.normalized * twoDiff * Time.deltaTime;
-			if(nowData == 0)
-				Destroy(arrowClone);
+			if (hasArrow)
+			{
+				Debug.LogWarning("hasArrow twoDiff = " + twoDiff);
+				arrowClone.transform.position += bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
+				if (nowData > -100 && nowData < 100)
+				{
+					Destroy(arrowClone);
+					hasArrow = false;
+				}
+			}
+			
 		}
 		else //射箭
 		{
-			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
+			//arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
+			//hasArrow = false;
 		}
-		
+
 		/*
 		if (Input.GetKeyDown(KeyCode.A))
 		{
@@ -94,6 +114,11 @@ public class oneBowControl : MonoBehaviour
 		 * */
 		return 1;
 	}
+	private float ConvertToPullBackCoefficient(float rotaryEncoderData)
+	{
+		//Debug.Log((rotaryEncoderData * 5) / 1600 );
+		return Mathf.Abs((rotaryEncoderData * 5) / 1600 );
+	}
 
 	class CommunicateWithArduino
 	{
@@ -107,7 +132,7 @@ public class oneBowControl : MonoBehaviour
 
 			if (connected)
 			{
-				string portChoice = "COM5";
+				string portChoice = "COM4";
 				if (mac)
 				{
 					int p = (int)Environment.OSVersion.Platform;
@@ -131,7 +156,7 @@ public class oneBowControl : MonoBehaviour
 				arduinoController.Handshake = Handshake.None;
 				arduinoController.RtsEnable = true;
 				arduinoController.Open();
-				Debug.LogWarning(arduinoController);
+				//Debug.LogWarning(arduinoController);
 			}
 
 		}
@@ -159,9 +184,9 @@ public class oneBowControl : MonoBehaviour
 			Thread.Sleep(500);
 		}
 
-		public int ReceiveData()
+		public float ReceiveData()
 		{
-			return int.Parse(arduinoController.ReadLine());
+			return float.Parse(arduinoController.ReadLine());
 		}
 	}
 }
