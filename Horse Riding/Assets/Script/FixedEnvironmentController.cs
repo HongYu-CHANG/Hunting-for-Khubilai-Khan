@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FixedEnvironmentController : MonoBehaviour {
 
-    // transform that we will follow
-    public Transform follow;
+  // transform that we will follow
+  public Transform follow;
 	private int speed;
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
