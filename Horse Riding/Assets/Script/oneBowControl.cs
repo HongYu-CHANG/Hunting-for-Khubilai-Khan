@@ -12,11 +12,11 @@ public class oneBowControl : MonoBehaviour
 	//arrow
 	public GameObject arrow;
 	public GameObject bowMiddle;
+	public GameObject bowTop;
+	public GameObject bowBot;
 	private GameObject arrowClone;
-	
 
-	public float arrowShootCoefficient;
-	public float pullBackCoefficient;
+	public float arrowShootCoefficient = 850;
 
 	//rotary encoder
 	private float previousData;
@@ -25,6 +25,10 @@ public class oneBowControl : MonoBehaviour
 	// Arduino connection
 	private CommunicateWithArduino Uno = new CommunicateWithArduino();
 
+	private LineRenderer lineRenderer;
+	private int numberOfPointsOnBow = 3;
+
+	private Vector3[] bowPositions = new Vector3[3];
 	private bool hasArrow;
 
 	void Start()
@@ -32,6 +36,13 @@ public class oneBowControl : MonoBehaviour
 		new Thread(Uno.connectToArdunio).Start();
 		previousData = 0;
 		hasArrow = false;
+		lineRenderer = gameObject.AddComponent<LineRenderer>();
+		lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
+		lineRenderer.startColor = Color.white;
+		lineRenderer.endColor = Color.white;
+		lineRenderer.startWidth = 0.01f;
+		lineRenderer.endWidth = 0.01f;
+		lineRenderer.positionCount = numberOfPointsOnBow;
 	}
 
 	void Update()
@@ -42,6 +53,7 @@ public class oneBowControl : MonoBehaviour
 		float twoDiff = nowData - previousData;
 		//Debug.Log("twoDiff = " + twoDiff);
 		previousData = nowData;
+		lineRenderer = GetComponent<LineRenderer>();
 
 		if (twoDiff == 0)//沒拉弓
 		{ }
@@ -49,14 +61,18 @@ public class oneBowControl : MonoBehaviour
 		{
 			if (!hasArrow)
 			{
-				
-				arrowClone = Instantiate(arrow, bowMiddle.transform.position, bowMiddle.transform.rotation);
+
+				Vector3 arrowPosition = new Vector3(bowMiddle.transform.position.x, bowMiddle.transform.position.y, bowMiddle.transform.position.z);
+				//arrowPosition -= transform.forward.normalized * 1300f;
+				arrowClone = Instantiate(arrow, arrowPosition, bowMiddle.transform.rotation);
 				arrowClone.transform.parent = gameObject.transform;
 				arrowClone.active = true;
 				arrowClone.transform.position = bowMiddle.transform.position;
+
 				hasArrow = true;
 			}
-			
+
+			//handBody.AddForce(scaleVector3((bowBody.transform.position - handBody.transform.position).normalized, pullBackCoefficient));
 			arrowClone.transform.up = bowMiddle.transform.forward;
 			arrowClone.transform.position -= bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
 
@@ -79,9 +95,15 @@ public class oneBowControl : MonoBehaviour
 		{
 			//Debug.LogWarning("hasArrow twoDiff = " + twoDiff);
 			arrowClone.transform.parent = GameObject.FindWithTag("horse").transform;
-			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * 850);
+			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
 			hasArrow = false;
 		}
+		bowPositions[0] = bowTop.transform.position;
+		bowPositions[1] = bowMiddle.transform.position;//arrowClone.transform.Find("tail").position;
+		bowPositions[2] = bowBot.transform.position;
+
+		// Render the bowstring
+		lineRenderer.SetPositions(bowPositions);
 	}
 
 	private float ConvertToPullBackCoefficient(float rotaryEncoderData)
