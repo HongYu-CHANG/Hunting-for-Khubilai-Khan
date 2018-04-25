@@ -65,7 +65,7 @@ public class oneBowControl : MonoBehaviour
 		{
 			if (hasArrow)
 			{
-				Debug.LogWarning("hasArrow twoDiff = " + twoDiff);
+				
 				arrowClone.transform.position += bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
 				if (nowData > -100 && nowData < 100)
 				{
@@ -75,45 +75,15 @@ public class oneBowControl : MonoBehaviour
 			}
 			
 		}
-		else //射箭
+		else if( twoDiff < -1000 && hasArrow)//射箭
 		{
-			//arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
-			//hasArrow = false;
+			//Debug.LogWarning("hasArrow twoDiff = " + twoDiff);
+			arrowClone.transform.parent = GameObject.FindWithTag("horse").transform;
+			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * 850);
+			hasArrow = false;
 		}
-
-		/*
-		if (Input.GetKeyDown(KeyCode.A))
-		{
-			arrowClone = Instantiate(arrow, bowMiddle.transform.position, bowMiddle.transform.rotation);
-			arrowClone.active = true;
-			arrowClone.transform.up = bowMiddle.transform.forward;
-			temp = true;
-
-		}
-		if (Input.GetKeyUp(KeyCode.A))
-		{
-			temp = false;
-		}
-		if (temp)
-		{ arrowClone.transform.position -= bowMiddle.transform.forward.normalized * pullBackCoefficient * Time.deltaTime; }
-		else
-		{
-			arrowClone.transform.position += bowMiddle.transform.forward.normalized * pullBackCoefficient * Time.deltaTime;
-			Destroy(arrowClone);
-		}
-		*/
 	}
 
-	public int PlayerStatus()
-	{
-		/**
-		 * 利用收到的資料去判斷下列三個狀態arduinoController.ReadLine();
-		 * 1. 拉弓 : 產生箭 箭往後(根據rotary encoder)
-		 * 2. 放箭 : 射
-		 * 3. 縮 : 箭消失
-		 * */
-		return 1;
-	}
 	private float ConvertToPullBackCoefficient(float rotaryEncoderData)
 	{
 		//Debug.Log((rotaryEncoderData * 5) / 1600 );
