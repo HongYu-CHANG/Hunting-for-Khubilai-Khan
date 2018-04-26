@@ -56,26 +56,29 @@ public class oneBowControl : MonoBehaviour
 		lineRenderer = GetComponent<LineRenderer>();
 
 		if (twoDiff == 0)//沒拉弓
-		{ }
+		{
+			if (!hasArrow)
+				bowPositions[1] = bowMiddle.transform.position;
+		}
 		else if (twoDiff > 20)//拉弓
 		{
 			if (!hasArrow)
 			{
 
+				Debug.Log("bowMiddle = " + bowMiddle.transform.position);
 				Vector3 arrowPosition = new Vector3(bowMiddle.transform.position.x, bowMiddle.transform.position.y, bowMiddle.transform.position.z);
-				//arrowPosition -= transform.forward.normalized * 1300f;
+				arrowPosition += transform.forward.normalized * 1f;
 				arrowClone = Instantiate(arrow, arrowPosition, bowMiddle.transform.rotation);
+				Debug.Log("arrowClone = " + arrowClone.transform.position);
 				arrowClone.transform.parent = gameObject.transform;
+				arrowClone.transform.up = bowMiddle.transform.forward;
 				arrowClone.active = true;
-				arrowClone.transform.position = bowMiddle.transform.position;
-
 				hasArrow = true;
+				
 			}
-
-			//handBody.AddForce(scaleVector3((bowBody.transform.position - handBody.transform.position).normalized, pullBackCoefficient));
-			arrowClone.transform.up = bowMiddle.transform.forward;
+			
 			arrowClone.transform.position -= bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
-
+			bowPositions[1] = arrowClone.transform.Find("tail").position;
 		}
 		else if (twoDiff < 0 && twoDiff > -1000)//緩緩鬆弓
 		{
@@ -83,6 +86,7 @@ public class oneBowControl : MonoBehaviour
 			{
 				
 				arrowClone.transform.position += bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
+				bowPositions[1] = arrowClone.transform.Find("tail").position;
 				if (nowData > -100 && nowData < 100)
 				{
 					Destroy(arrowClone);
@@ -97,9 +101,9 @@ public class oneBowControl : MonoBehaviour
 			arrowClone.transform.parent = GameObject.FindWithTag("horse").transform;
 			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
 			hasArrow = false;
+			bowPositions[1] = bowMiddle.transform.position;
 		}
 		bowPositions[0] = bowTop.transform.position;
-		bowPositions[1] = bowMiddle.transform.position;//arrowClone.transform.Find("tail").position;
 		bowPositions[2] = bowBot.transform.position;
 
 		// Render the bowstring
