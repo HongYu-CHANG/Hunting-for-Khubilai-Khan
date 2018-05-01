@@ -65,11 +65,11 @@ public class oneBowControl : MonoBehaviour
 			if (!hasArrow)
 			{
 
-				Debug.Log("bowMiddle = " + bowMiddle.transform.position);
+				//Debug.Log("bowMiddle = " + bowMiddle.transform.position);
 				Vector3 arrowPosition = new Vector3(bowMiddle.transform.position.x, bowMiddle.transform.position.y, bowMiddle.transform.position.z);
 				arrowPosition += transform.forward.normalized * 1f;
 				arrowClone = Instantiate(arrow, arrowPosition, bowMiddle.transform.rotation);
-				Debug.Log("arrowClone = " + arrowClone.transform.position);
+				//Debug.Log("arrowClone = " + arrowClone.transform.position);
 				arrowClone.transform.parent = gameObject.transform;
 				arrowClone.transform.up = bowMiddle.transform.forward;
 				arrowClone.active = true;
@@ -80,7 +80,7 @@ public class oneBowControl : MonoBehaviour
 			arrowClone.transform.position -= bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
 			bowPositions[1] = arrowClone.transform.Find("tail").position;
 		}
-		else if (twoDiff < 0 && twoDiff > -1000)//緩緩鬆弓
+		else if (twoDiff < 0 && twoDiff > -800)//緩緩鬆弓
 		{
 			if (hasArrow)
 			{

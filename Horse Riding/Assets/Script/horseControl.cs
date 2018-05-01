@@ -63,9 +63,14 @@ public class horseControl : MonoBehaviour {
 			_animator.SetInteger("horseSpeed", 2);
 			speedController.setSpeed(10);
 		}
-		else //瘋狂跑
+		else if (pressure < 300)//跑
 		{ 
 			_animator.SetInteger("horseSpeed", 3);
+			speedController.setSpeed(15);
+		}
+		else//瘋狂跑
+		{
+			_animator.SetInteger("horseSpeed", 4);
 			speedController.setSpeed(20);
 		}
 	}

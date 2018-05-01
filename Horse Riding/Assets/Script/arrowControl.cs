@@ -6,7 +6,7 @@ public class arrowControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		SendMessageUpwards("AddScore", "5555");
 	}
 	
 	// Update is called once per frame
@@ -14,7 +14,13 @@ public class arrowControl : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter(){
-		print("arrow Collision");
+	void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.name != "Horse" 
+			&& gameObject.transform.parent == GameObject.FindWithTag("horse").transform)
+		{
+			Destroy(this.gameObject);
+			SendMessageUpwards("AddScore", collision.gameObject.name);
+		}
 	}
 }

@@ -44,7 +44,7 @@ public class animalControl : MonoBehaviour {
 
 	IEnumerator animalDisappear()
 	{
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(0.8f);
 		Destroy(this.gameObject);
 		//Score
 	}
