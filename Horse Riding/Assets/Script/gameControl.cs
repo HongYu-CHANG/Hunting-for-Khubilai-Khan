@@ -15,11 +15,14 @@ public class gameControl : MonoBehaviour {
 	private string animalName;
 	private int score = 0;
 	private Vector3 popMessagePosition;
+	private Color popMessageColor;
 
 	// Use this for initialization
 	void Start ()
 	{
-		popMessagePosition = new Vector3 (28.3f, 7f, 0f);
+		popMessagePosition = popMessage.transform.position;// new Vector3 (28.3f, 7f, 0f);
+		Debug.Log(popMessage.transform.position);
+		popMessageColor = popMessage.color; //white
 	}
 	
 	// Update is called once per frame
@@ -57,17 +60,24 @@ public class gameControl : MonoBehaviour {
 
 	private void UpdateUI(float num)
 	{
-		popMessage.transform.position = new Vector3(popMessage.transform.position.x, popMessage.transform.position.y
-			+ 125f * Time.deltaTime, popMessage.transform.position.z);
-		Color color = popMessage.color;
-		color.a -= 0.025f;
-		popMessage.color = color;
+	
+	popMessage.transform.position = new Vector3(popMessage.transform.position.x, popMessage.transform.position.y
+		+ 125f * Time.deltaTime, popMessage.transform.position.z);
+	/*		
+	popMessage.transform.up = new Vector3(popMessage.transform.position.x, popMessage.transform.position.y
+			+ 125f * Time.deltaTime, popMessage.transform.position.z);*/
+		//Color color = popMessage.color;
+		popMessageColor.a -= 0.025f;
+		popMessage.color = popMessageColor;
 		popMessage.text = animalName + " +" + score;
-		if (color.a < 0f)
+		if (popMessageColor.a < 0f)
 		{
 			popMessage.transform.position = popMessagePosition;
-			color.a = 1f;
+			popMessageColor.a = 1f;
+			Debug.Log(popMessage.transform.position);
 		}
-		Debug.Log(color);
+		//Debug.Log(color);
+		//Debug.Log(popMessageColor.a);
+
 	}
 }
