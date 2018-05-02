@@ -27,6 +27,19 @@ public class horseControl : MonoBehaviour {
 		XdisOfPlayerAndHorse = -1.5f;
 		YdisOfPlayerAndHorse = 4f;
 		ZdisOfPlayerAndHorse = -1.2f;
+
+
+		transform.position = playerPosition.transform.position;
+		transform.forward = playerPosition.transform.forward;
+		transform.position -= transform.up.normalized * 2f;
+		transform.position -= transform.forward.normalized * 1.3f;
+
+		if ((playerController.transform.position.x - transform.position.x) > XdisOfPlayerAndHorse)
+			XdisOfPlayerAndHorse = playerController.transform.position.x - transform.position.x;
+		if ((playerController.transform.position.y - transform.position.y) > YdisOfPlayerAndHorse)
+			YdisOfPlayerAndHorse = playerController.transform.position.y - transform.position.y;
+		if ((playerController.transform.position.z - transform.position.z) > ZdisOfPlayerAndHorse)
+			ZdisOfPlayerAndHorse = playerController.transform.position.z - transform.position.z;
 	}
 
 	// Update is called once per frame

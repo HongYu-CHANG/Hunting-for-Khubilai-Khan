@@ -32,19 +32,21 @@
 【UI】
 
  (有讓它回到原位&控制顏色，但是每次pop出來的位置都不一樣!!?!?!沒被canvas控制到??!!?!?!?)
+ 動物被射中，說明甚麼被射中、加的分數，回到原位和顏色回歸問題
 ※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
 
 【預計下次工作】
 
 UI
-  動物被射中，說明甚麼被射中、加的分數，回到原位和顏色回歸問題
-  start的部分:要射到東西才開始(動物!?)
+  在螢幕上面寫，射到大豬遊戲就開始
+  animal code 要改版
+  start的部分:要射到東西才開始(豬)
     -----------
-  換model(如果有給model的話)
   氣壓計
   連到後面的影片動畫!
+  換model(如果有給model的話)
+
   
-要模型!!!!!!!!!
 
 【可能放最後的工作】
 動物稀有度
@@ -59,5 +61,7 @@ UI
 【參考資料】
  
  Move Ui.Text Unity https://stackoverflow.com/questions/32058618/move-ui-text-unity
+ C# Compare Strings? https://forum.unity.com/threads/c-compare-strings.116697/
+ C＃中分割的幾種使用方法 http://lolikitty.pixnet.net/blog/post/31496676-c%EF%BC%83%E4%B8%AD%E5%88%86%E5%89%B2%E7%9A%84%E5%B9%BE%E7%A8%AE%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95
 
 

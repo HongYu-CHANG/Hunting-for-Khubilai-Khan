@@ -6,7 +6,6 @@ public class arrowControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SendMessageUpwards("AddScore", "5555");
 	}
 	
 	// Update is called once per frame

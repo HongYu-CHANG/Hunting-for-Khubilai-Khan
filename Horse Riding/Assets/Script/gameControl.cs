@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,10 +35,11 @@ public class gameControl : MonoBehaviour {
 
 	public void AddScore(string animalName)
 	{
-
-		print(animalName);
+		//print(animalName);
+		animalName = animalName.Replace("(Clone)", "");
 		this.animalName = animalName;
-		if (animalName.CompareTo("(Clone)") > 0)
+		//print(String.Compare(animalName, "Terrain") + " " +animalName);
+		if (String.Compare(animalName, "Terrain") != 0)
 		{
 			score = 20;
 			NowScore += score;
