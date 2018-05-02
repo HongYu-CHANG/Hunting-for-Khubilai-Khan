@@ -16,12 +16,12 @@ public class gameControl : MonoBehaviour {
 	private int score = 0;
 	private Vector3 popMessagePosition;
 	private Color popMessageColor;
+	private bool showPopMessage = false;
 
 	// Use this for initialization
 	void Start ()
 	{
-		popMessagePosition = popMessage.transform.position;// new Vector3 (28.3f, 7f, 0f);
-		Debug.Log(popMessage.transform.position);
+		popMessagePosition = popMessage.rectTransform.localPosition; 
 		popMessageColor = popMessage.color; //white
 	}
 	
@@ -41,6 +41,7 @@ public class gameControl : MonoBehaviour {
 		{
 			score = 20;
 			NowScore += score;
+			showPopMessage = true;
 		}
 
 		
@@ -60,24 +61,18 @@ public class gameControl : MonoBehaviour {
 
 	private void UpdateUI(float num)
 	{
-	
-	popMessage.transform.position = new Vector3(popMessage.transform.position.x, popMessage.transform.position.y
-		+ 125f * Time.deltaTime, popMessage.transform.position.z);
-	/*		
-	popMessage.transform.up = new Vector3(popMessage.transform.position.x, popMessage.transform.position.y
-			+ 125f * Time.deltaTime, popMessage.transform.position.z);*/
-		//Color color = popMessage.color;
+		popMessage.rectTransform.localPosition = new Vector3(popMessage.rectTransform.localPosition.x, popMessage.rectTransform.localPosition.y
+		+ 125f * Time.deltaTime, popMessage.rectTransform.localPosition.z);
+
 		popMessageColor.a -= 0.025f;
 		popMessage.color = popMessageColor;
 		popMessage.text = animalName + " +" + score;
-		if (popMessageColor.a < 0f)
+		if (showPopMessage)
 		{
-			popMessage.transform.position = popMessagePosition;
+			popMessage.rectTransform.localPosition = popMessagePosition;
 			popMessageColor.a = 1f;
-			Debug.Log(popMessage.transform.position);
+			showPopMessage = false;
 		}
-		//Debug.Log(color);
-		//Debug.Log(popMessageColor.a);
 
 	}
 }
