@@ -14,7 +14,7 @@ public class gameControl : MonoBehaviour {
 	public Text popMessage;
 	private int NowScore = 0;
 	private int time = 0;
-	private float timer_f = 120f;
+	private float timer_f = 0f;
 	private bool TimerOn = false;
 	private string animalName;
 	private int score = 0;
@@ -62,6 +62,7 @@ public class gameControl : MonoBehaviour {
 		introduction.gameObject.SetActive(false);
 		TimerOn = true;
 		NowScore = 0;
+		time = 120;
 		timer_f = 120f;
 		labelScore.text = string.Format("{0:D2}", NowScore);
 		scoreGroup.gameObject.SetActive(true);
@@ -77,6 +78,16 @@ public class gameControl : MonoBehaviour {
 			timer_f -= num;
 			time = (int)timer_f;
 			labelTime.text = string.Format("{0:D2}", time);
+		}
+		if(time == 0)
+		{
+			introduction.text = "遊戲結束！！ 總得分為：" + NowScore;
+			scoreGroup.gameObject.SetActive(false);
+			timeGroup.gameObject.SetActive(false);
+			popMessage.gameObject.SetActive(false);
+			introduction.gameObject.SetActive(true);
+			TimerOn = false;
+			//這裡跳下一個場景 要傳送總分數
 		}
 	}
 
