@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class gameControl : MonoBehaviour {
@@ -62,8 +63,8 @@ public class gameControl : MonoBehaviour {
 		introduction.gameObject.SetActive(false);
 		TimerOn = true;
 		NowScore = 0;
-		time = 120;
-		timer_f = 120f;
+		time = 5;
+		timer_f = 5f;
 		labelScore.text = string.Format("{0:D2}", NowScore);
 		scoreGroup.gameObject.SetActive(true);
 		timeGroup.gameObject.SetActive(true);
@@ -78,17 +79,19 @@ public class gameControl : MonoBehaviour {
 			timer_f -= num;
 			time = (int)timer_f;
 			labelTime.text = string.Format("{0:D2}", time);
+			if (time == 0)
+			{
+				introduction.text = "遊戲結束！！ 總得分為：" + NowScore;
+				scoreGroup.gameObject.SetActive(false);
+				timeGroup.gameObject.SetActive(false);
+				popMessage.gameObject.SetActive(false);
+				introduction.gameObject.SetActive(true);
+				TimerOn = false;
+				StartCoroutine(yurtScene());
+				//這裡跳下一個場景 要傳送總分數
+			}
 		}
-		if(time == 0)
-		{
-			introduction.text = "遊戲結束！！ 總得分為：" + NowScore;
-			scoreGroup.gameObject.SetActive(false);
-			timeGroup.gameObject.SetActive(false);
-			popMessage.gameObject.SetActive(false);
-			introduction.gameObject.SetActive(true);
-			TimerOn = false;
-			//這裡跳下一個場景 要傳送總分數
-		}
+		
 	}
 
 	private void UpdateUI(float num)
@@ -105,6 +108,11 @@ public class gameControl : MonoBehaviour {
 			popMessageColor.a = 1f;
 			showPopMessage = false;
 		}
+	}
 
+	IEnumerator yurtScene()
+	{
+		yield return new WaitForSeconds(0.8f);
+		SceneManager.LoadScene("Yurt");
 	}
 }

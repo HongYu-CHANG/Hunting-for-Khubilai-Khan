@@ -8,6 +8,7 @@ public class startAnimal : MonoBehaviour {
 	private GameObject horse;
 	private Animator _animator;
 	private bool isDead;
+	public bool sss = false;
 
 	// Use this for initialization
 	void Start()
@@ -31,6 +32,11 @@ public class startAnimal : MonoBehaviour {
 		if (this.transform.position.y <= -10)
 		{
 			Destroy(this.gameObject);
+		}
+		if (sss)
+		{
+			SendMessageUpwards("StartGame");
+			sss = false;
 		}
 	}
 
