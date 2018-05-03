@@ -36,4 +36,3 @@
 【參考資料】
 Animator動畫切換教學 https://jerrard-liu.blogspot.tw/2016/04/MecanimPart4.html 
 Collision概念 https://home.gamer.com.tw/creationDetail.php?sn=2300960
- 

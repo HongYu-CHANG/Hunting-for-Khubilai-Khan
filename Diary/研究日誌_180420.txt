@@ -45,4 +45,3 @@ Spawner 裡面用個動物的list去隨機產生防止讓使用者覺得同種�
 【參考資料】
 計時 https://home.gamer.com.tw/creationDetail.php?sn=2275726
 Unity 隨機產生值https://kw0006667.wordpress.com/2013/04/02/c-%E9%9A%A8%E6%A9%9F%E7%94%A2%E7%94%9F%E5%80%BC-vs-unity-%E9%9A%A8%E6%A9%9F%E7%94%A2%E7%94%9F%E5%80%BC/
- 

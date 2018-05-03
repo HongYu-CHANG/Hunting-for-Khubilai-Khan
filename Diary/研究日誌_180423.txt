@@ -44,5 +44,4 @@
  
 【參考資料】
 List remove item https://stackoverflow.com/questions/10018957/c-sharp-how-to-remove-item-from-list
-What is a Null Reference Exception?  https://docs.unity3d.com/Manual/NullReferenceException.html
- 
+What is a Null Reference Exception? https://docs.unity3d.com/Manual/NullReferenceException.html
