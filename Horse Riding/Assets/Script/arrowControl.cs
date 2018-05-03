@@ -15,11 +15,13 @@ public class arrowControl : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.name != "Horse" 
+		if (collision.gameObject.name != "Horse"
 			&& gameObject.transform.parent == GameObject.FindWithTag("horse").transform)
 		{
 			Destroy(this.gameObject);
 			SendMessageUpwards("AddScore", collision.gameObject.name);
 		}
+
+		if(collision.gameObject.name != "StartAnimal") Destroy(this.gameObject);
 	}
 }

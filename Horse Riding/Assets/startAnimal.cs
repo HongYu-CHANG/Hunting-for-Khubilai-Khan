@@ -40,6 +40,7 @@ public class startAnimal : MonoBehaviour {
 			isDead = true;
 			StartCoroutine(animalDisappear());
 			print("Start Game");
+			SendMessageUpwards("StartGame");
 		}
 	}
 	IEnumerator animalDisappear()

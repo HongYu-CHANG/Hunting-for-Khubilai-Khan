@@ -6,13 +6,16 @@ using UnityEngine.UI;
 
 public class gameControl : MonoBehaviour {
 
+	public GameObject scoreGroup;
+	public GameObject timeGroup;
+	public Text introduction;
 	public Text labelScore;
 	public Text labelTime;
 	public Text popMessage;
 	private int NowScore = 0;
 	private int time = 0;
 	private float timer_f = 120f;
-	private bool TimerOn = true;
+	private bool TimerOn = false;
 	private string animalName;
 	private int score = 0;
 	private Vector3 popMessagePosition;
@@ -24,6 +27,10 @@ public class gameControl : MonoBehaviour {
 	{
 		popMessagePosition = popMessage.rectTransform.localPosition; 
 		popMessageColor = popMessage.color; //white
+		scoreGroup.gameObject.SetActive(false);
+		timeGroup.gameObject.SetActive(false);
+		popMessage.gameObject.SetActive(false);
+		introduction.gameObject.SetActive(true);
 	}
 	
 	// Update is called once per frame
@@ -46,9 +53,21 @@ public class gameControl : MonoBehaviour {
 			showPopMessage = true;
 		}
 
-		
 		labelScore.text = string.Format("{0:D2}", NowScore);
 		
+	}
+
+	public void StartGame()
+	{
+		introduction.gameObject.SetActive(false);
+		TimerOn = true;
+		NowScore = 0;
+		timer_f = 120f;
+		labelScore.text = string.Format("{0:D2}", NowScore);
+		scoreGroup.gameObject.SetActive(true);
+		timeGroup.gameObject.SetActive(true);
+		popMessage.gameObject.SetActive(true);
+
 	}
 
 	private void UpdateTime(float num)
@@ -64,7 +83,7 @@ public class gameControl : MonoBehaviour {
 	private void UpdateUI(float num)
 	{
 		popMessage.rectTransform.localPosition = new Vector3(popMessage.rectTransform.localPosition.x, popMessage.rectTransform.localPosition.y
-		+ 125f * Time.deltaTime, popMessage.rectTransform.localPosition.z);
+		+ 100f * Time.deltaTime, popMessage.rectTransform.localPosition.z);
 
 		popMessageColor.a -= 0.025f;
 		popMessage.color = popMessageColor;
