@@ -63,8 +63,8 @@ public class gameControl : MonoBehaviour {
 		introduction.gameObject.SetActive(false);
 		TimerOn = true;
 		NowScore = 0;
-		time = 5;
-		timer_f = 5f;
+		time = 120;
+		timer_f = 120f;
 		labelScore.text = string.Format("{0:D2}", NowScore);
 		scoreGroup.gameObject.SetActive(true);
 		timeGroup.gameObject.SetActive(true);
