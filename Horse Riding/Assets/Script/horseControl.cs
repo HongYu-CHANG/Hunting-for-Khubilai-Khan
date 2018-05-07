@@ -16,14 +16,15 @@ public class horseControl : MonoBehaviour {
 	private float ZdisOfPlayerAndHorse;
 	private Animator _animator;
 	private int temp = 0;
-	public int pressure;
+	private int frameCounter = 0;
+	public int pressure = 1;
 
 	// Arduino connection
 	private CommunicateWithArduino Uno = new CommunicateWithArduino();
 	
 	void Start ()
 	{
-		//new Thread(Uno.connectToArdunio).Start
+		new Thread(Uno.connectToArdunio).Start
 		_animator = this.GetComponent<Animator>();
 		XdisOfPlayerAndHorse = -1.5f;
 		YdisOfPlayerAndHorse = 4f;
@@ -41,6 +42,8 @@ public class horseControl : MonoBehaviour {
 			YdisOfPlayerAndHorse = playerController.transform.position.y - transform.position.y;
 		if ((playerController.transform.position.z - transform.position.z) > ZdisOfPlayerAndHorse)
 			ZdisOfPlayerAndHorse = playerController.transform.position.z - transform.position.z;
+
+		new Thread(Uno.SendData).Start("0");
 	}
 
 	// Update is called once per frame
@@ -77,12 +80,21 @@ public class horseControl : MonoBehaviour {
         {
 	        _animator.SetInteger("horseSpeed", pressure);
 			speedController.setSpeed(5*pressure);
-			temp = 0;
+			temp = 1;
 		}
 		else
 		{	
-			temp = temp % 3;
-			temp ++;
+			if(frameCounter == 100)
+			{
+				temp = temp % 3;
+				temp++;
+				frameCounter = 0;
+
+			}
+			else
+			{
+				frameCounter++;
+			}
 			//Debug.Log(temp);
 			_animator.SetInteger("horseSpeed", temp);
 			speedController.setSpeed( 5*temp );
