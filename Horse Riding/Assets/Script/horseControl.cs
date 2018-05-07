@@ -15,6 +15,7 @@ public class horseControl : MonoBehaviour {
 	private float YdisOfPlayerAndHorse;
 	private float ZdisOfPlayerAndHorse;
 	private Animator _animator;
+	private int temp = 0;
 	public int pressure;
 
 	// Arduino connection
@@ -65,27 +66,49 @@ public class horseControl : MonoBehaviour {
 		transform.eulerAngles= new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);//保持馬的水平
 		playerController.transform.position = new Vector3(transform.position.x + XdisOfPlayerAndHorse, transform.position.y + YdisOfPlayerAndHorse, transform.position.z + ZdisOfPlayerAndHorse);
 		//馬的XZ位置需再FOR騎馬機調整
-		//pressure = 0;//Uno.ReceiveData();
-		if (pressure < 100) // 走路
+		try {
+			pressure = Uno.ReceiveData();
+		}
+		catch (NullReferenceException ex) {
+            pressure = pressure;
+        }
+
+        if(pressure != 4)
+        {
+	        _animator.SetInteger("horseSpeed", pressure);
+			speedController.setSpeed(5*pressure);
+			temp = 0;
+		}
+		else
+		{	
+			temp = temp % 3;
+			temp ++;
+			//Debug.Log(temp);
+			_animator.SetInteger("horseSpeed", temp);
+			speedController.setSpeed( 5*temp );
+		}
+		
+		/*if (pressure < 100) // 走路
 		{
-			_animator.SetInteger("horseSpeed", 1);
+			_animator.SetInteger("horseSpeed", pressure);
 			speedController.setSpeed(5);
 		}
 		else if (pressure < 200) //小跑步
 		{
-			_animator.SetInteger("horseSpeed", 2);
+			_animator.SetInteger("horseSpeed", pressure);
 			speedController.setSpeed(10);
 		}
 		else if (pressure < 300)//跑
 		{ 
-			_animator.SetInteger("horseSpeed", 3);
+			_animator.SetInteger("horseSpeed", pressure);
 			speedController.setSpeed(15);
 		}
 		else//瘋狂跑
 		{
-			_animator.SetInteger("horseSpeed", 4);
+			_animator.SetInteger("horseSpeed", pressure);
 			speedController.setSpeed(20);
 		}
+		*/
 	}
 
 	class CommunicateWithArduino
