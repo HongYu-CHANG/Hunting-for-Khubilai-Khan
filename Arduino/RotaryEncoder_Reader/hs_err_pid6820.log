@@ -1,0 +1,302 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x68bd9bb2, pid=6820, tid=0x000042c8
+#
+# JRE version:  (8.0_144-b01) (build )
+# Java VM: Java HotSpot(TM) Client VM (25.144-b01 mixed mode windows-x86 )
+# Problematic frame:
+# C  [Nahimic2OSD.dll+0x9bb2]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x051c0400):  JavaThread "main" [_thread_in_native, id=17096, stack(0x04d10000,0x04d60000)]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x68c08eb8, ECX=0x68c08fc0, EDX=0x04d5f7b0
+ESP=0x04d5e680, EBP=0x04d5e6b8, ESI=0x76ea7340, EDI=0x04d5f7b0
+EIP=0x68bd9bb2, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x04d5e680)
+0x04d5e680:   68bd3581 04d5f7b0 00000000 00000022
+0x04d5e690:   04d5f7b0 76ea7340 68c08eb8 00000001
+0x04d5e6a0:   74510f90 00000000 00000000 04d5e6cc
+0x04d5e6b0:   68bf850e ffffffff 04d5e6dc 68bd29e4
+0x04d5e6c0:   00000000 00000022 68c08fc0 04d5e70c
+0x04d5e6d0:   68bf850e ffffffff 04d5f7b0 04d5e718
+0x04d5e6e0:   68bd3581 04d5f7b0 00000000 00000022
+0x04d5e6f0:   04d5f7b0 76ea7340 68c08eb8 00000000 
+
+Instructions: (pc=0x68bd9bb2)
+0x68bd9b92:   68 e8 58 80 ff ff a3 fc 7f c0 68 a1 bc 91 c0 68
+0x68bd9ba2:   a8 01 75 2a 83 c8 01 a3 bc 91 c0 68 c7 44 24 10
+0x68bd9bb2:   00 00 00 00 e8 65 00 00 00 68 40 92 bf 68 e8 f8
+0x68bd9bc2:   c4 00 00 83 c4 04 c7 44 24 10 ff ff ff ff 8b 35 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x68c08eb8 is an unknown value
+ECX=0x68c08fc0 is an unknown value
+EDX=0x04d5f7b0 is pointing into the stack for thread: 0x051c0400
+ESP=0x04d5e680 is pointing into the stack for thread: 0x051c0400
+EBP=0x04d5e6b8 is pointing into the stack for thread: 0x051c0400
+ESI=0x76ea7340 is an unknown value
+EDI=0x04d5f7b0 is pointing into the stack for thread: 0x051c0400
+
+
+Stack: [0x04d10000,0x04d60000],  sp=0x04d5e680,  free space=313k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [Nahimic2OSD.dll+0x9bb2]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [Nahimic2OSD.dll+0x3581]
+C  [Nahimic2OSD.dll+0x29e4]
+C  [KERNELBASE.dll+0xefa81]
+C  [KERNELBASE.dll+0x10fc98]
+C  [java.dll+0xabc9]
+C  [java.dll+0x0]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.System.initProperties(Ljava/util/Properties;)Ljava/util/Properties;+0
+j  java.lang.System.initializeSystemClass()V+13
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x27b2c400 JavaThread "Finalizer" daemon [_thread_blocked, id=9940, stack(0x287c0000,0x28810000)]
+  0x27b16400 JavaThread "Reference Handler" daemon [_thread_blocked, id=16532, stack(0x27d50000,0x27da0000)]
+=>0x051c0400 JavaThread "main" [_thread_in_native, id=17096, stack(0x04d10000,0x04d60000)]
+
+Other Threads:
+  0x27b11000 VMThread [stack: 0x075a0000,0x075f0000] [id=17056]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 39296K, used 698K [0x07600000, 0x0a0a0000, 0x120a0000)
+  eden space 34944K,   2% used [0x07600000, 0x076aeb98, 0x09820000)
+  from space 4352K,   0% used [0x09820000, 0x09820000, 0x09c60000)
+  to   space 4352K,   0% used [0x09c60000, 0x09c60000, 0x0a0a0000)
+ tenured generation   total 87424K, used 0K [0x120a0000, 0x17600000, 0x27600000)
+   the space 87424K,   0% used [0x120a0000, 0x120a0000, 0x120a0200, 0x17600000)
+ Metaspace       used 727K, capacity 2240K, committed 2240K, reserved 4480K
+
+Card table byte_map: [0x05390000,0x054a0000] byte_map_base: 0x05355000
+
+Polling page: 0x01090000
+
+CodeCache: size=32768Kb used=334Kb max_used=334Kb free=32433Kb
+ bounds [0x054b0000, 0x05508000, 0x074b0000]
+ total_blobs=68 nmethods=0 adapters=45
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.032 Thread 0x051c0400 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x07606e98) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u144\9417\hotspot\src\share\vm
+Event: 0.032 Thread 0x051c0400 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x07607168) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u144\9417\hotspot\src\share\vm\prims\jni.cpp, li
+
+Events (10 events):
+Event: 0.032 loading class java/util/HashMap$Node done
+Event: 0.032 loading class sun/misc/VM
+Event: 0.033 loading class sun/misc/VM done
+Event: 0.033 loading class java/util/Hashtable$Entry
+Event: 0.033 loading class java/util/Hashtable$Entry done
+Event: 0.033 loading class java/lang/Math
+Event: 0.033 loading class java/lang/Math done
+Event: 0.033 loading class java/lang/ref/Finalizer$FinalizerThread
+Event: 0.033 loading class java/lang/ref/Finalizer$FinalizerThread done
+Event: 0.033 Thread 0x27b2c400 Thread added: 0x27b2c400
+
+
+Dynamic libraries:
+0x00ff0000 - 0x01023000 	C:\Program Files (x86)\Arduino\java\bin\javaw.exe
+0x77520000 - 0x776ad000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x76e90000 - 0x76f60000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x74420000 - 0x745f7000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x74b50000 - 0x74bc8000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x74a90000 - 0x74b4d000 	C:\WINDOWS\System32\msvcrt.dll
+0x741a0000 - 0x741e3000 	C:\WINDOWS\System32\sechost.dll
+0x74080000 - 0x7413e000 	C:\WINDOWS\System32\RPCRT4.dll
+0x73f40000 - 0x73f60000 	C:\WINDOWS\System32\SspiCli.dll
+0x73f30000 - 0x73f3a000 	C:\WINDOWS\System32\CRYPTBASE.dll
+0x76c50000 - 0x76ca7000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x771a0000 - 0x77315000 	C:\WINDOWS\System32\USER32.dll
+0x76540000 - 0x76556000 	C:\WINDOWS\System32\win32u.dll
+0x76e00000 - 0x76e22000 	C:\WINDOWS\System32\GDI32.dll
+0x763d0000 - 0x7652f000 	C:\WINDOWS\System32\gdi32full.dll
+0x774a0000 - 0x7751c000 	C:\WINDOWS\System32\msvcp_win.dll
+0x73f60000 - 0x74077000 	C:\WINDOWS\System32\ucrtbase.dll
+0x721c0000 - 0x723d1000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.16299.431_none_5d750ac5a7e1c779\COMCTL32.dll
+0x76180000 - 0x763c6000 	C:\WINDOWS\System32\combase.dll
+0x76f60000 - 0x76f85000 	C:\WINDOWS\System32\IMM32.DLL
+0x78400000 - 0x784bf000 	C:\Program Files (x86)\Arduino\java\bin\msvcr100.dll
+0x6c4d0000 - 0x6c89e000 	C:\Program Files (x86)\Arduino\java\bin\client\jvm.dll
+0x74a80000 - 0x74a86000 	C:\WINDOWS\System32\PSAPI.DLL
+0x68fb0000 - 0x68fb8000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x76f90000 - 0x76ff6000 	C:\WINDOWS\System32\WS2_32.dll
+0x72190000 - 0x721b4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x73ca0000 - 0x73ca8000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x71e30000 - 0x71e53000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x76e50000 - 0x76e88000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x5bf20000 - 0x5bf50000 	C:\Program Files (x86)\Arduino\java\bin\splashscreen.dll
+0x72550000 - 0x725c9000 	C:\WINDOWS\system32\uxtheme.dll
+0x6d960000 - 0x6d96c000 	C:\Program Files (x86)\Arduino\java\bin\verify.dll
+0x74210000 - 0x74354000 	C:\WINDOWS\System32\MSCTF.dll
+0x75ff0000 - 0x76083000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x51e10000 - 0x51e31000 	C:\Program Files (x86)\Arduino\java\bin\java.dll
+0x63e30000 - 0x63e60000 	C:\Program Files\Nahimic\Nahimic2\UserInterface\Nahimic2DevProps.dll
+0x74bd0000 - 0x75f04000 	C:\WINDOWS\System32\SHELL32.dll
+0x76b30000 - 0x76bb8000 	C:\WINDOWS\System32\shcore.dll
+0x76560000 - 0x76b26000 	C:\WINDOWS\System32\windows.storage.dll
+0x74140000 - 0x74185000 	C:\WINDOWS\System32\shlwapi.dll
+0x77320000 - 0x7732e000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x74a30000 - 0x74a75000 	C:\WINDOWS\System32\powrprof.dll
+0x741f0000 - 0x74204000 	C:\WINDOWS\System32\profapi.dll
+0x76d00000 - 0x76df7000 	C:\WINDOWS\System32\ole32.dll
+0x62730000 - 0x62743000 	C:\Program Files (x86)\Arduino\java\bin\zip.dll
+0x68bd0000 - 0x68c14000 	C:\Program Files\Nahimic\Nahimic2\UserInterface\Nahimic2OSD.dll
+0x76bc0000 - 0x76c42000 	C:\WINDOWS\System32\clbcatq.dll
+0x70030000 - 0x7008b000 	C:\WINDOWS\System32\MMDevApi.dll
+0x712a0000 - 0x712c2000 	C:\WINDOWS\System32\DEVOBJ.dll
+0x6feb0000 - 0x7002b000 	C:\WINDOWS\System32\PROPSYS.dll
+0x6fdb0000 - 0x6fea4000 	C:\WINDOWS\SYSTEM32\AUDIOSES.DLL
+0x6fcd0000 - 0x6fd9b000 	C:\WINDOWS\SYSTEM32\wintypes.dll
+0x6fda0000 - 0x6fda8000 	C:\WINDOWS\SYSTEM32\AVRT.dll
+0x69380000 - 0x693f7000 	C:\WINDOWS\System32\TextInputFramework.dll
+0x69140000 - 0x69374000 	C:\WINDOWS\System32\CoreUIComponents.dll
+0x690b0000 - 0x6913c000 	C:\WINDOWS\System32\CoreMessaging.dll
+0x73880000 - 0x738a8000 	C:\WINDOWS\SYSTEM32\ntmarta.dll
+0x6fc10000 - 0x6fc33000 	C:\WINDOWS\system32\dwmapi.dll
+0x6d3e0000 - 0x6d561000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dsun.java2d.d3d=false -Djna.nosys=true -Djna.nounpack=true -Djna.boot.library.name=jnidispatch-4.2.2-win32-x86 -Djna.boot.library.path=C:\Program Files (x86)\Arduino/lib -Djssc.library.path=C:\Program Files (x86)\Arduino/lib -DAPP_DIR=C:\Program Files (x86)\Arduino -Xms128M -Xmx512M 
+java_command: processing.app.Base D:\_LabProject\national-palace\Polo\NPM_HorseRidingProject\Arduino\RotaryEncoder_Reader\RotaryEncoder_Reader.ino
+java_class_path (initial): C:\Program Files (x86)\Arduino\lib\apple.jar;C:\Program Files (x86)\Arduino\lib\arduino-core.jar;C:\Program Files (x86)\Arduino\lib\batik-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-anim-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-awt-util-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-bridge-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-codec-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-css-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-dom-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-ext-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-gvt-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-parser-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-rasterizer-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-script-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-squiggle-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-svg-dom-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-svgpp-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-transcoder-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-util-1.8.jar;C:\Program Files (x86)\Arduino\lib\batik-xml-1.8.jar;C:\Program Files (x86)\Arduino\lib\bcpg-jdk15on-152.jar;C:\Program Files (x86)\Arduino\lib\bcprov-jdk15on-152.jar;C:\Program Files (x86)\Arduino\lib\commons-codec-1.7.jar;C:\Program Files (x86)\Arduino\lib\commons-compress-1.8.jar;C:\Program Files (x86)\Arduino\lib\commons-exec-1.1.jar;C:\Program Files (x86)\Arduino\lib\commons-httpclient-3.1.jar;C:\Program Files (x86)\Arduino\lib\commons-lang3-3.3.2.jar;C:\Program Files (x86)\Arduino\lib\commons-logging-1.0.4.jar;C:\Program Files (x86)\Arduino\lib\commons-net-3.3.jar;C:\Program Files (x86)\Arduino\lib\jackson-annotations-2.6.3.jar;C:\Program Files (x86)\Arduino\lib\jackson-core-2.6.3.jar;C:\Program Files (x86)\Arduino\lib\jackson-databind-2.6.3.jar;C:\Program Files (x86)\Arduino\lib\jackson-module-mrbean-2.6.3.jar;C:\Program Files (x86)\Arduino\lib\java-semver-0.8.0.jar;C:\Program Files (x86)\Arduino\lib\jmdns-3.5.1.j
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_112
+CLASSPATH=C:\Program Files\OpenNI\Bin64\org.OpenNI.jar
+PATH=C:\Intel\OpenCL\sdk\bin\x64;C:\Intel\OpenCL\sdk\bin\x86;C:\Intel\OpenCL\sdk\bin\Pin;C:\Intel\OpenCL\sdk\bin\GTPin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\libnvvp;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\MATLAB\R2016a\runtime\win64;C:\Program Files\MATLAB\R2016a\bin;C:\Program Files (x86)\Windows Live\Shared;D:\cudnn-8.0-windows10-x64-v5.1\cuda\bin;C:\Users\liwei\Downloads\cudnn-8.0-windows10-x64-v5.1\cuda\bin;C:\Program Files\OpenNI\Bin64;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Python27;C:\Python27\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\MinGW\bin;C:\Program Files\PuTTY\;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\lib/x64;C:\Users\liwei\AppData\Local\Programs\Python\Python35\Scripts\;C:\Users\liwei\AppData\Local\Programs\Python\Python35\;C:\Users\liwei\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;;C:\Program Files (x86)\Arduino\java\bin
+USERNAME=liwei
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 16299 (10.0.16299.431)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 94 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 33499616k(21333056k free), swap 38480352k(22632828k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.144-b01) for windows-x86 JRE (1.8.0_144-b01), built on Jul 21 2017 21:58:05 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed May 09 20:52:19 2018
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

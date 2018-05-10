@@ -13,6 +13,7 @@ public class animalControl : MonoBehaviour {
 	{
 		_animator = this.GetComponent<Animator>();
 		isDead = false;
+		this.gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -40,7 +41,13 @@ public class animalControl : MonoBehaviour {
 			isDead = true;
 			StartCoroutine(animalDisappear());
 		}
+		if (collision.gameObject.name == "Terrain")
+		{
+			this.gameObject.SetActive(true);
+		}
+		Debug.Log(collision.gameObject.name);
 	}
+
 
 	IEnumerator animalDisappear()
 	{

@@ -36,11 +36,13 @@ void setup() {
   onOff = false;
 
   // Enable air pressure chip
-  if (pressure.begin())
-    Serial.println("BMP180 init success");
+  if (pressure.begin()){
+    delay(1);
+    //Serial.println("BMP180 init success");
+  }
   else
   {
-    Serial.println("BMP180 init fail\n\n");
+    //Serial.println("BMP180 init fail\n\n");
     while(1); // Pause forever.
   }
   
@@ -66,8 +68,10 @@ void loop() {
   }
   
   // Use control signal to control switch on or speed up
-  overallControl(input);
+  overallControl(input); 
 
+  //Serial.println(speedState);
+  //delay(50);
 }
 
 void overallControl(char input){
@@ -87,8 +91,6 @@ void overallControl(char input){
       case '1':
         state = SPEEDUP;
 //        Serial.print("Speeding  up......");
-        break;
-      default:
         break;
   }
   

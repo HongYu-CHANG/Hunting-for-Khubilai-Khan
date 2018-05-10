@@ -113,6 +113,7 @@ public class gameControl : MonoBehaviour {
 	IEnumerator yurtScene()
 	{
 		yield return new WaitForSeconds(0.8f);
+		GameObject.FindWithTag("horse").GetComponent<horseControl>().closeHorse();
 		SceneManager.LoadScene("Yurt");
 	}
 }

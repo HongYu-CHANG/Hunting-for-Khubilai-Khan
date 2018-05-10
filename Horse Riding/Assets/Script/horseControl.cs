@@ -24,13 +24,13 @@ public class horseControl : MonoBehaviour {
 	
 	void Start ()
 	{
-		new Thread(Uno.connectToArdunio).Start
+		new Thread(Uno.connectToArdunio).Start();
 		_animator = this.GetComponent<Animator>();
 		XdisOfPlayerAndHorse = -1.5f;
 		YdisOfPlayerAndHorse = 4f;
 		ZdisOfPlayerAndHorse = -1.2f;
 
-
+		//horse initial
 		transform.position = playerPosition.transform.position;
 		transform.forward = playerPosition.transform.forward;
 		transform.position -= transform.up.normalized * 2f;
@@ -43,7 +43,7 @@ public class horseControl : MonoBehaviour {
 		if ((playerController.transform.position.z - transform.position.z) > ZdisOfPlayerAndHorse)
 			ZdisOfPlayerAndHorse = playerController.transform.position.z - transform.position.z;
 
-		new Thread(Uno.SendData).Start("0");
+		
 	}
 
 	// Update is called once per frame
@@ -52,27 +52,18 @@ public class horseControl : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.H))
 		{
-			Debug.Log("Press H");
-
-			transform.position = playerPosition.transform.position;
-			transform.forward = playerPosition.transform.forward;
-			transform.position -= transform.up.normalized * 2f;
-			transform.position -= transform.forward.normalized * 1.3f;
-			
-			if((playerController.transform.position.x - transform.position.x) > XdisOfPlayerAndHorse)
-				XdisOfPlayerAndHorse = playerController.transform.position.x - transform.position.x;
-			if ((playerController.transform.position.y - transform.position.y) > YdisOfPlayerAndHorse)
-				YdisOfPlayerAndHorse = playerController.transform.position.y - transform.position.y;
-			if ((playerController.transform.position.z - transform.position.z) > ZdisOfPlayerAndHorse)
-				ZdisOfPlayerAndHorse = playerController.transform.position.z - transform.position.z;
+			new Thread(Uno.SendData).Start("0");
+			Debug.Log("Press H");	
 		}
 		transform.eulerAngles= new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);//保持馬的水平
 		playerController.transform.position = new Vector3(transform.position.x + XdisOfPlayerAndHorse, transform.position.y + YdisOfPlayerAndHorse, transform.position.z + ZdisOfPlayerAndHorse);
 		//馬的XZ位置需再FOR騎馬機調整
+		//pressure = Uno.ReceiveData();
 		try {
 			pressure = Uno.ReceiveData();
 		}
-		catch (NullReferenceException ex) {
+		catch (TimeoutException e)
+		{
             pressure = pressure;
         }
 
@@ -95,34 +86,19 @@ public class horseControl : MonoBehaviour {
 			{
 				frameCounter++;
 			}
-			//Debug.Log(temp);
 			_animator.SetInteger("horseSpeed", temp);
 			speedController.setSpeed( 5*temp );
 		}
-		
-		/*if (pressure < 100) // 走路
-		{
-			_animator.SetInteger("horseSpeed", pressure);
-			speedController.setSpeed(5);
-		}
-		else if (pressure < 200) //小跑步
-		{
-			_animator.SetInteger("horseSpeed", pressure);
-			speedController.setSpeed(10);
-		}
-		else if (pressure < 300)//跑
-		{ 
-			_animator.SetInteger("horseSpeed", pressure);
-			speedController.setSpeed(15);
-		}
-		else//瘋狂跑
-		{
-			_animator.SetInteger("horseSpeed", pressure);
-			speedController.setSpeed(20);
-		}
-		*/
 	}
 
+	public void closeHorse()
+	{
+		new Thread(Uno.SendData).Start("0");
+	}
+	private void OnDestroy()
+	{
+		closeHorse();
+	}
 	class CommunicateWithArduino
 	{
 		public bool connected = true;
@@ -135,7 +111,7 @@ public class horseControl : MonoBehaviour {
 
 			if (connected)
 			{
-				string portChoice = "COM6";
+				string portChoice = "COM7";
 				if (mac)
 				{
 					int p = (int)Environment.OSVersion.Platform;
@@ -158,6 +134,7 @@ public class horseControl : MonoBehaviour {
 				arduinoController = new SerialPort(portChoice, 9600, Parity.None, 8, StopBits.One);
 				arduinoController.Handshake = Handshake.None;
 				arduinoController.RtsEnable = true;
+				arduinoController.ReadTimeout = 1;
 				arduinoController.Open();
 				Debug.LogWarning(arduinoController);
 			}
