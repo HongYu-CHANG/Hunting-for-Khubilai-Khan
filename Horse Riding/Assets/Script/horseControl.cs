@@ -24,7 +24,11 @@ public class horseControl : MonoBehaviour {
 	
 	void Start ()
 	{
+<<<<<<< HEAD
 		new Thread(Uno.connectToArdunio).Start();
+=======
+		//new Thread(Uno.connectToArdunio).Start
+>>>>>>> 482b95eeb6de18922b6f0e1eedabc23e30f06959
 		_animator = this.GetComponent<Animator>();
 		XdisOfPlayerAndHorse = -1.5f;
 		YdisOfPlayerAndHorse = 4f;
