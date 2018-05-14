@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 13ecbc494297e4c04a8206b2457255c2
+timeCreated: 1525262431
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 88b7b8b971d96ed2f908c952502ab0bd
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 0.5156151, y: 0.5500236, z: -0.55735993}
+      lookAt: {x: 0.11647345, y: 0.1604202, z: 0.12791641}
+      up: {x: -0.22192615, y: 0.8975372, z: 0.3810194}
+      fov: 30
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: book
+    100002: book 1
+    100004: book 2
+    100006: book 3
+    100008: book 4
+    100010: book 5
+    100012: //RootNode
+    400000: book
+    400002: book 1
+    400004: book 2
+    400006: book 3
+    400008: book 4
+    400010: book 5
+    400012: //RootNode
+    2100000: _Snow_
+    2100002: _SaddleBrown_
+    2100004: _BurlyWood_
+    2100006: _Yellow_
+    2100008: _Charcoal_
+    2300000: book
+    2300002: book 1
+    2300004: book 2
+    2300006: book 3
+    2300008: book 4
+    2300010: book 5
+    3300000: book
+    3300002: book 1
+    3300004: book 2
+    3300006: book 3
+    3300008: book 4
+    3300010: book 5
+    4300000: Mesh book
+    4300002: Mesh book
+    4300004: Mesh book
+    4300006: Mesh book
+    4300008: Mesh book
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

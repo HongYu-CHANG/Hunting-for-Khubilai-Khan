@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Yurt.unity
     guid: 9638223e9907a464f9a1e779e10fd3b0
+  - enabled: 1
+    path: Assets/Scene/Yurt-V2.unity
+    guid: 4a03a4b5193ff2745859fdf09bd1b366

@@ -79,7 +79,7 @@ public class gameControl : MonoBehaviour {
 			timer_f -= num;
 			time = (int)timer_f;
 			labelTime.text = string.Format("{0:D2}", time);
-			if (time == 0)
+			if (time == 110)
 			{
 				introduction.text = "遊戲結束！！ 總得分為：" + NowScore;
 				scoreGroup.gameObject.SetActive(false);
@@ -114,6 +114,6 @@ public class gameControl : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(0.8f);
 		GameObject.FindWithTag("horse").GetComponent<horseControl>().closeHorse();
-		SceneManager.LoadScene("Yurt");
+		SceneManager.LoadScene("Yurt-V2");
 	}
 }
