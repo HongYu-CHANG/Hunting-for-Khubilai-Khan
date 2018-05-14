@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class startAnimal : MonoBehaviour {
 
-	public bool startgame;
 	private GameObject horse;
 	private Animator _animator;
 	private bool isDead;
-	public bool sss = false;
+	public bool tempStartButton = false;
 
 	// Use this for initialization
 	void Start()
 	{
 		_animator = this.GetComponent<Animator>();
 		isDead = false;
-		startgame = false;
 	}
 
 	// Update is called once per frame
@@ -33,10 +31,10 @@ public class startAnimal : MonoBehaviour {
 		{
 			Destroy(this.gameObject);
 		}
-		if (sss)
+		if (tempStartButton)
 		{
 			SendMessageUpwards("StartGame");
-			sss = false;
+			tempStartButton = false;
 		}
 	}
 
