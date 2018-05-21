@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 2d491db6ac49f4efea7d7314ce6a42ea
+timeCreated: 1526310273
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000
+  assetHash:
+    serializedVersion: 2
+    Hash: a6d6272a55c99154000fd56743d98c8f
+  longitude: -90.18622196555162
+  latitude: 38.642274754225056
+  northCorrection: 1.7582730610943145
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 0.9994297, y: 3.6817446, z: -6.4352684}
+      lookAt: {x: 1.2182193, y: 2.2107754, z: 0.18111339}
+      up: {x: 0.007168847, y: 0.9761915, z: 0.2167921}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Burlap Coffee Bag
+    100002: Dead Tree
+    100004: GrainSack01
+    100006: Group 2
+    100008: Group 5
+    100010: //RootNode
+    400000: Burlap Coffee Bag
+    400002: Dead Tree
+    400004: GrainSack01
+    400006: Group 2
+    400008: Group 5
+    400010: //RootNode
+    2100000: _defaultMat
+    2100002: 3253421419_9107ea9045_b
+    2100004: CB1
+    2100006: Sack1
+    2300000: GrainSack01
+    2300002: Group 2
+    2300004: Group 5
+    3300000: GrainSack01
+    3300002: Group 2
+    3300004: Group 5
+    4300000: Mesh Group 2
+    4300002: Mesh Group 5
+    4300004: Mesh GrainSack01
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: 0bed620d12b1441d88bfab2222b5ec74
+timeCreated: 1526310248
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f0000003000000031000000320000003300000034000000
+  assetHash:
+    serializedVersion: 2
+    Hash: f0a0321a653710b8975da570f045be73
+  longitude: 2.183
+  latitude: 41.383
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 4.237365, y: 5.7471166, z: -8.252117}
+      lookAt: {x: 0.10173284, y: 5.1380067, z: -0.14177537}
+      up: {x: -0.030325817, y: 0.9977693, z: 0.05947162}
+      fov: 60
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: palm-leaves
+    100002: palm-leaves 1
+    100004: palm-leaves 10
+    100006: palm-leaves 11
+    100008: palm-leaves 12
+    100010: palm-leaves 13
+    100012: palm-leaves 14
+    100014: palm-leaves 15
+    100016: palm-leaves 16
+    100018: palm-leaves 17
+    100020: palm-leaves 18
+    100022: palm-leaves 19
+    100024: palm-leaves 2
+    100026: palm-leaves 20
+    100028: palm-leaves 21
+    100030: palm-leaves 22
+    100032: palm-leaves 23
+    100034: palm-leaves 24
+    100036: palm-leaves 3
+    100038: palm-leaves 4
+    100040: palm-leaves 5
+    100042: palm-leaves 6
+    100044: palm-leaves 7
+    100046: palm-leaves 8
+    100048: palm-leaves 9
+    100050: //RootNode
+    100052: palm-tree 1
+    100054: palm-wood
+    400000: palm-leaves
+    400002: palm-leaves 1
+    400004: palm-leaves 10
+    400006: palm-leaves 11
+    400008: palm-leaves 12
+    400010: palm-leaves 13
+    400012: palm-leaves 14
+    400014: palm-leaves 15
+    400016: palm-leaves 16
+    400018: palm-leaves 17
+    400020: palm-leaves 18
+    400022: palm-leaves 19
+    400024: palm-leaves 2
+    400026: palm-leaves 20
+    400028: palm-leaves 21
+    400030: palm-leaves 22
+    400032: palm-leaves 23
+    400034: palm-leaves 24
+    400036: palm-leaves 3
+    400038: palm-leaves 4
+    400040: palm-leaves 5
+    400042: palm-leaves 6
+    400044: palm-leaves 7
+    400046: palm-leaves 8
+    400048: palm-leaves 9
+    400050: //RootNode
+    400052: palm-tree 1
+    400054: palm-wood
+    2100000: palm-wood
+    2100002: palm-cutted
+    2100004: palm-leaves
+    2300000: palm-leaves 1
+    2300002: palm-leaves 10
+    2300004: palm-leaves 11
+    2300006: palm-leaves 12
+    2300008: palm-leaves 13
+    2300010: palm-leaves 14
+    2300012: palm-leaves 15
+    2300014: palm-leaves 16
+    2300016: palm-leaves 17
+    2300018: palm-leaves 18
+    2300020: palm-leaves 19
+    2300022: palm-leaves 2
+    2300024: palm-leaves 20
+    2300026: palm-leaves 21
+    2300028: palm-leaves 22
+    2300030: palm-leaves 23
+    2300032: palm-leaves 24
+    2300034: palm-leaves 3
+    2300036: palm-leaves 4
+    2300038: palm-leaves 5
+    2300040: palm-leaves 6
+    2300042: palm-leaves 7
+    2300044: palm-leaves 8
+    2300046: palm-leaves 9
+    2300048: palm-wood
+    3300000: palm-leaves 1
+    3300002: palm-leaves 10
+    3300004: palm-leaves 11
+    3300006: palm-leaves 12
+    3300008: palm-leaves 13
+    3300010: palm-leaves 14
+    3300012: palm-leaves 15
+    3300014: palm-leaves 16
+    3300016: palm-leaves 17
+    3300018: palm-leaves 18
+    3300020: palm-leaves 19
+    3300022: palm-leaves 2
+    3300024: palm-leaves 20
+    3300026: palm-leaves 21
+    3300028: palm-leaves 22
+    3300030: palm-leaves 23
+    3300032: palm-leaves 24
+    3300034: palm-leaves 3
+    3300036: palm-leaves 4
+    3300038: palm-leaves 5
+    3300040: palm-leaves 6
+    3300042: palm-leaves 7
+    3300044: palm-leaves 8
+    3300046: palm-leaves 9
+    3300048: palm-wood
+    4300000: Mesh palm-wood
+    4300002: Mesh palm-leaves
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: 6745b5faf391141efa20896627f9fdc2
+timeCreated: 1526310137
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 6db79201fd1f0a588cb71f93f7f65414
+  longitude: -105.242139
+  latitude: 40.018309
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 12.491579, y: 4.2039905, z: 1.5293825}
+      lookAt: {x: 0.57170355, y: 3.7295468, z: -0.34675023}
+      up: {x: -0.03881055, y: 0.99922794, z: -0.0061085992}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Canopy-Palm-King-01
+    100002: coconut
+    100004: coconut 1
+    100006: coconut 2
+    100008: coconut 3
+    100010: coconut 4
+    100012: coconut 5
+    100014: coconut 6
+    100016: coconut 7
+    100018: coconut bunch
+    100020: //RootNode
+    100022: Cocos nucifera
+    100024: Leaf-Palm-ShortWithTexture
+    100026: Leaf-Palm-ShortWithTexture 1
+    100028: Leaf-Palm-ShortWithTexture 10
+    100030: Leaf-Palm-ShortWithTexture 11
+    100032: Leaf-Palm-ShortWithTexture 12
+    100034: Leaf-Palm-ShortWithTexture 13
+    100036: Leaf-Palm-ShortWithTexture 14
+    100038: Leaf-Palm-ShortWithTexture 15
+    100040: Leaf-Palm-ShortWithTexture 2
+    100042: Leaf-Palm-ShortWithTexture 3
+    100044: Leaf-Palm-ShortWithTexture 4
+    100046: Leaf-Palm-ShortWithTexture 5
+    100048: Leaf-Palm-ShortWithTexture 6
+    100050: Leaf-Palm-ShortWithTexture 7
+    100052: Leaf-Palm-ShortWithTexture 8
+    100054: Leaf-Palm-ShortWithTexture 9
+    100056: Trunk-Palm-Straight-02#3
+    400000: Canopy-Palm-King-01
+    400002: coconut
+    400004: coconut 1
+    400006: coconut 2
+    400008: coconut 3
+    400010: coconut 4
+    400012: coconut 5
+    400014: coconut 6
+    400016: coconut 7
+    400018: coconut bunch
+    400020: //RootNode
+    400022: Cocos nucifera
+    400024: Leaf-Palm-ShortWithTexture
+    400026: Leaf-Palm-ShortWithTexture 1
+    400028: Leaf-Palm-ShortWithTexture 10
+    400030: Leaf-Palm-ShortWithTexture 11
+    400032: Leaf-Palm-ShortWithTexture 12
+    400034: Leaf-Palm-ShortWithTexture 13
+    400036: Leaf-Palm-ShortWithTexture 14
+    400038: Leaf-Palm-ShortWithTexture 15
+    400040: Leaf-Palm-ShortWithTexture 2
+    400042: Leaf-Palm-ShortWithTexture 3
+    400044: Leaf-Palm-ShortWithTexture 4
+    400046: Leaf-Palm-ShortWithTexture 5
+    400048: Leaf-Palm-ShortWithTexture 6
+    400050: Leaf-Palm-ShortWithTexture 7
+    400052: Leaf-Palm-ShortWithTexture 8
+    400054: Leaf-Palm-ShortWithTexture 9
+    400056: Trunk-Palm-Straight-02#3
+    2100000: '[Color E07]'
+    2100002: c-PalmLeaf-01
+    2100004: _3
+    2300000: coconut
+    2300002: coconut 1
+    2300004: coconut 2
+    2300006: coconut 3
+    2300008: coconut 4
+    2300010: coconut 5
+    2300012: coconut 6
+    2300014: coconut 7
+    2300016: Leaf-Palm-ShortWithTexture
+    2300018: Leaf-Palm-ShortWithTexture 1
+    2300020: Leaf-Palm-ShortWithTexture 10
+    2300022: Leaf-Palm-ShortWithTexture 11
+    2300024: Leaf-Palm-ShortWithTexture 12
+    2300026: Leaf-Palm-ShortWithTexture 13
+    2300028: Leaf-Palm-ShortWithTexture 14
+    2300030: Leaf-Palm-ShortWithTexture 15
+    2300032: Leaf-Palm-ShortWithTexture 2
+    2300034: Leaf-Palm-ShortWithTexture 3
+    2300036: Leaf-Palm-ShortWithTexture 4
+    2300038: Leaf-Palm-ShortWithTexture 5
+    2300040: Leaf-Palm-ShortWithTexture 6
+    2300042: Leaf-Palm-ShortWithTexture 7
+    2300044: Leaf-Palm-ShortWithTexture 8
+    2300046: Leaf-Palm-ShortWithTexture 9
+    2300048: Trunk-Palm-Straight-02#3
+    3300000: coconut
+    3300002: coconut 1
+    3300004: coconut 2
+    3300006: coconut 3
+    3300008: coconut 4
+    3300010: coconut 5
+    3300012: coconut 6
+    3300014: coconut 7
+    3300016: Leaf-Palm-ShortWithTexture
+    3300018: Leaf-Palm-ShortWithTexture 1
+    3300020: Leaf-Palm-ShortWithTexture 10
+    3300022: Leaf-Palm-ShortWithTexture 11
+    3300024: Leaf-Palm-ShortWithTexture 12
+    3300026: Leaf-Palm-ShortWithTexture 13
+    3300028: Leaf-Palm-ShortWithTexture 14
+    3300030: Leaf-Palm-ShortWithTexture 15
+    3300032: Leaf-Palm-ShortWithTexture 2
+    3300034: Leaf-Palm-ShortWithTexture 3
+    3300036: Leaf-Palm-ShortWithTexture 4
+    3300038: Leaf-Palm-ShortWithTexture 5
+    3300040: Leaf-Palm-ShortWithTexture 6
+    3300042: Leaf-Palm-ShortWithTexture 7
+    3300044: Leaf-Palm-ShortWithTexture 8
+    3300046: Leaf-Palm-ShortWithTexture 9
+    3300048: Trunk-Palm-Straight-02#3
+    4300000: Mesh coconut
+    4300002: Mesh Leaf-Palm-ShortWithTexture
+    4300004: Mesh Trunk-Palm-Straight-02#3
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
