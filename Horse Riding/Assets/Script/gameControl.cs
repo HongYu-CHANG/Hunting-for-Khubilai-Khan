@@ -79,7 +79,7 @@ public class gameControl : MonoBehaviour {
 			timer_f -= num;
 			time = (int)timer_f;
 			labelTime.text = string.Format("{0:D2}", time);
-			if (time == 110)
+			if (time == 0)
 			{
 				introduction.text = "遊戲結束！！ 總得分為：" + NowScore;
 				scoreGroup.gameObject.SetActive(false);

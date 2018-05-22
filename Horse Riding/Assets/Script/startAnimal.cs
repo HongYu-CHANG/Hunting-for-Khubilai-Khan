@@ -27,7 +27,7 @@ public class startAnimal : MonoBehaviour {
 		{
 			Destroy(this.gameObject);
 		}
-		if (this.transform.position.y <= -10)
+		if (this.transform.position.y <= -25)
 		{
 			Destroy(this.gameObject);
 		}

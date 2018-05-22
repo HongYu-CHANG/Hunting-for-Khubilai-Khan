@@ -27,7 +27,7 @@ public class horseControl : MonoBehaviour {
 		new Thread(Uno.connectToArdunio).Start();
 		_animator = this.GetComponent<Animator>();
 		XdisOfPlayerAndHorse = -1.5f;
-		YdisOfPlayerAndHorse = 4f;
+		YdisOfPlayerAndHorse = 3f;
 		ZdisOfPlayerAndHorse = -1.2f;
 
 		//horse initial
@@ -143,7 +143,6 @@ public class horseControl : MonoBehaviour {
 		public void SendData(object obj)
 		{
 			string data = obj as string;
-			Debug.Log(data);
 			if (connected)
 			{
 				if (arduinoController != null)
