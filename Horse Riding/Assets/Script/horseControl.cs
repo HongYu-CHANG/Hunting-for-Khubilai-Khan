@@ -28,7 +28,7 @@ public class horseControl : MonoBehaviour {
 		_animator = this.GetComponent<Animator>();
 		XdisOfPlayerAndHorse = -1.5f;
 		YdisOfPlayerAndHorse = 3f;
-		ZdisOfPlayerAndHorse = -1.2f;
+		ZdisOfPlayerAndHorse = -2f;
 
 		//horse initial
 		transform.position = playerPosition.transform.position;
@@ -111,7 +111,7 @@ public class horseControl : MonoBehaviour {
 
 			if (connected)
 			{
-				string portChoice = "COM7";
+				string portChoice = "COM4";
 				if (mac)
 				{
 					int p = (int)Environment.OSVersion.Platform;

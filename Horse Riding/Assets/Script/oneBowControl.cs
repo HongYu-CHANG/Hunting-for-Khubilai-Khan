@@ -80,7 +80,7 @@ public class oneBowControl : MonoBehaviour
 			arrowClone.transform.position -= bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
 			bowPositions[1] = arrowClone.transform.Find("tail").position;
 		}
-		else if (twoDiff < 0 && twoDiff > -800)//緩緩鬆弓
+		else if (twoDiff < 0 && twoDiff > -80)//緩緩鬆弓
 		{
 			if (hasArrow)
 			{
@@ -95,7 +95,7 @@ public class oneBowControl : MonoBehaviour
 			}
 			
 		}
-		else if( twoDiff < -1000 && hasArrow)//射箭
+		else if( twoDiff < -100 && hasArrow)//射箭
 		{
 			//Debug.LogWarning("hasArrow twoDiff = " + twoDiff);
 			arrowClone.transform.parent = GameObject.FindWithTag("horse").transform;
@@ -128,7 +128,7 @@ public class oneBowControl : MonoBehaviour
 
 			if (connected)
 			{
-				string portChoice = "COM4";
+				string portChoice = "COM7";
 				if (mac)
 				{
 					int p = (int)Environment.OSVersion.Platform;
