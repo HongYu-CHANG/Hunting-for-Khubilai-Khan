@@ -7,6 +7,7 @@ public class animalControl : MonoBehaviour {
 	private GameObject horse;
 	private Animator _animator;
 	private bool isDead;
+	private int faceDirection = 0;
 
 	// Use this for initialization
 	void Start ()
@@ -14,13 +15,18 @@ public class animalControl : MonoBehaviour {
 		_animator = this.GetComponent<Animator>();
 		isDead = false;
 		this.gameObject.SetActive(false);
+		while (faceDirection == 0)
+		{
+			faceDirection = UnityEngine.Random.Range(-1, 2);
+		}
+		Debug.Log(faceDirection);
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		horse = GameObject.FindWithTag("horse");
-		transform.forward += horse.transform.forward.normalized;
+		transform.forward += horse.transform.forward.normalized * faceDirection;
 		if (!isDead) this.transform.position += this.transform.forward.normalized * 5 * Time.deltaTime;
 		
 		if (Mathf.Abs(this.transform.eulerAngles.z) >= 70 && Mathf.Abs(this.transform.eulerAngles.z) <= 290)
