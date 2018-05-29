@@ -19,7 +19,6 @@ public class animalControl : MonoBehaviour {
 		{
 			faceDirection = UnityEngine.Random.Range(-1, 2);
 		}
-		Debug.Log(faceDirection);
 	}
 	
 	// Update is called once per frame

@@ -31,6 +31,8 @@ public class oneBowControl : MonoBehaviour
 	private Vector3[] bowPositions = new Vector3[3];
 	private bool hasArrow;
 
+	public bool isFirstShot = false;
+
 	void Start()
 	{
 		new Thread(Uno.connectToArdunio).Start();
@@ -102,6 +104,7 @@ public class oneBowControl : MonoBehaviour
 			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
 			hasArrow = false;
 			bowPositions[1] = bowMiddle.transform.position;
+			isFirstShot = true;
 		}
 		bowPositions[0] = bowTop.transform.position;
 		bowPositions[2] = bowBot.transform.position;
@@ -109,10 +112,13 @@ public class oneBowControl : MonoBehaviour
 		// Render the bowstring
 		lineRenderer.SetPositions(bowPositions);
 	}
+	public bool isShot()
+	{
+		return isFirstShot;
+	}
 
 	private float ConvertToPullBackCoefficient(float rotaryEncoderData)
 	{
-		//Debug.Log((rotaryEncoderData * 5) / 1600 );
 		return Mathf.Abs((rotaryEncoderData * 5) / 1600 );
 	}
 

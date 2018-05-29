@@ -114,6 +114,8 @@ public class gameControl : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(0.8f);
 		GameObject.FindWithTag("horse").GetComponent<horseControl>().closeHorse();
+		float fadeTime = GameObject.Find("Canvas").GetComponent<fading>().BeginFade(1);
+		yield return new WaitForSeconds(fadeTime);
 		SceneManager.LoadScene("Yurt-V2");
 	}
 }

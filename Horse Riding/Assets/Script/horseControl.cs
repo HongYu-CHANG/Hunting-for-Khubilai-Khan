@@ -11,6 +11,7 @@ public class horseControl : MonoBehaviour {
 	public GameObject playerPosition;
 	public GameObject playerController;
 	public FixedEnvironmentController speedController;
+	public GameObject spawnerGroup;
 	private float XdisOfPlayerAndHorse;
 	private float YdisOfPlayerAndHorse;
 	private float ZdisOfPlayerAndHorse;
@@ -42,8 +43,8 @@ public class horseControl : MonoBehaviour {
 			YdisOfPlayerAndHorse = playerController.transform.position.y - transform.position.y;
 		if ((playerController.transform.position.z - transform.position.z) > ZdisOfPlayerAndHorse)
 			ZdisOfPlayerAndHorse = playerController.transform.position.z - transform.position.z;
-
-		
+		//spawnerGroup.SetActive(false);
+		//StartCoroutine(spawnerControl());
 	}
 
 	// Update is called once per frame
@@ -98,6 +99,11 @@ public class horseControl : MonoBehaviour {
 	private void OnDestroy()
 	{
 		closeHorse();
+	}
+	IEnumerator spawnerControl()
+	{
+		yield return new WaitForSeconds(2f);
+		spawnerGroup.SetActive(true);
 	}
 	class CommunicateWithArduino
 	{
