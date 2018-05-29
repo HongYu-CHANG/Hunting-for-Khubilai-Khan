@@ -15,7 +15,6 @@ public class arrowControl : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision)
 	{
-		Debug.Log(collision.gameObject.name);
 		if (collision.gameObject.name != "Horse"
 			&& gameObject.transform.parent == GameObject.FindWithTag("horse").transform)
 		{
@@ -23,6 +22,13 @@ public class arrowControl : MonoBehaviour {
 			SendMessageUpwards("AddScore", collision.gameObject.name);
 		}
 
-		if(collision.gameObject.name != "StartAnimal" && collision.gameObject.name != "Horse") Destroy(this.gameObject);
+		if (collision.gameObject.name != "StartAnimal" && collision.gameObject.name != "Horse")
+		{
+			Destroy(this.gameObject);
+		}
+		if (collision.gameObject.name == "Card1" || collision.gameObject.name == "Card2" || collision.gameObject.name == "Card3")
+		{
+			Destroy(this.gameObject);
+		}
 	}
 }

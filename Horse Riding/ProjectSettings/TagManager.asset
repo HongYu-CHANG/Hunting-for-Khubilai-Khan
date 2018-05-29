@@ -6,6 +6,8 @@ TagManager:
   tags:
   - arrow
   - horse
+  - Card1_pic
+  - Card1_word
   layers:
   - Default
   - TransparentFX
