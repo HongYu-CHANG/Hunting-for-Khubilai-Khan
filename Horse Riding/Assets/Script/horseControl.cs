@@ -99,6 +99,7 @@ public class horseControl : MonoBehaviour {
 	private void OnDestroy()
 	{
 		closeHorse();
+		Uno.closeSerial();
 	}
 	IEnumerator spawnerControl()
 	{
@@ -172,6 +173,11 @@ public class horseControl : MonoBehaviour {
 		public int ReceiveData()
 		{
 			return int.Parse(arduinoController.ReadLine());
+		}
+
+		public void closeSerial()
+		{
+			arduinoController.Close();
 		}
 	}
 

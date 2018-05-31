@@ -116,7 +116,7 @@ void overallControl(char input){
         }
         cycles = 0;
         state = 0;
-        Serial.println(speedState);
+        Serial.println(1);
       }
       break;
     case SPEEDUP:
@@ -139,7 +139,7 @@ void overallControl(char input){
           }
           cycles = 0;
           state = 0;
-          Serial.println(speedState);
+          Serial.println(1);
         }
         break;
     }
