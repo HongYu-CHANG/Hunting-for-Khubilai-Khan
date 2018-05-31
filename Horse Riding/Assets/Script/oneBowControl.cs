@@ -99,12 +99,13 @@ public class oneBowControl : MonoBehaviour
 		}
 		else if( twoDiff < -100 && hasArrow)//射箭
 		{
-			//Debug.LogWarning("hasArrow twoDiff = " + twoDiff);
+			//Debug.LogWarning("isFirstShot = " + isFirstShot);
 			arrowClone.transform.parent = GameObject.FindWithTag("horse").transform;
 			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
 			hasArrow = false;
 			bowPositions[1] = bowMiddle.transform.position;
 			isFirstShot = true;
+			//Debug.LogWarning("isFirstShot = " + isFirstShot);
 		}
 		bowPositions[0] = bowTop.transform.position;
 		bowPositions[2] = bowBot.transform.position;
@@ -115,6 +116,11 @@ public class oneBowControl : MonoBehaviour
 	public bool isShot()
 	{
 		return isFirstShot;
+	}
+
+	public void OnDestroy()
+	{
+		Uno.closeSerial();
 	}
 
 	private float ConvertToPullBackCoefficient(float rotaryEncoderData)
@@ -189,6 +195,11 @@ public class oneBowControl : MonoBehaviour
 		public float ReceiveData()
 		{
 			return float.Parse(arduinoController.ReadLine());
+		}
+
+		public void closeSerial()
+		{
+			arduinoController.Close();
 		}
 	}
 }
