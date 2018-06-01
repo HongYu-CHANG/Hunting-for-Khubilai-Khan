@@ -2,12 +2,11 @@
 #define SPEED 3
 
 // States
-#define CYCLELENGTH 500
+#define CYCLELENGTH 5000
 #define SWITCHING 1
 #define SPEEDUP 2
 int state;
 int cycles;
-bool onOff;
 
 // Air pressure chip
 #include <SFE_BMP180.h>
@@ -19,6 +18,7 @@ int speedState;
 
 // Constructors
 SFE_BMP180 pressure;
+bool onOff;
 
 void overallControl(char input);
 double pressureMeasure();
@@ -36,15 +36,15 @@ void setup() {
   onOff = false;
 
   // Enable air pressure chip
-  if (pressure.begin()){
-    delay(1);
-    //Serial.println("BMP180 init success");
-  }
-  else
-  {
-    //Serial.println("BMP180 init fail\n\n");
-    while(1); // Pause forever.
-  }
+//  if (pressure.begin()){
+//    delay(1);
+//    //Serial.println("BMP180 init success");
+//  }
+//  else
+//  {
+//    //Serial.println("BMP180 init fail\n\n");
+//    while(1); // Pause forever.
+//  }
   
   // Message
   Serial.begin(9600);
@@ -58,10 +58,10 @@ void setup() {
 
 void loop() {
   char input;
-  if(!initial){
-    iniPressure = pressureMeasure();
-    initial = true;
-  }
+//  if(!initial){
+//    iniPressure = pressureMeasure();
+//    initial = true;
+//  }
   
   while(Serial.available()){
     input = Serial.read();
@@ -78,10 +78,10 @@ void overallControl(char input){
 
   double curPressure;
 
-  curPressure = pressureMeasure();
-  if(curPressure - iniPressure >= THRESHOLD){
-    input = '1';
-  }
+//  curPressure = pressureMeasure();
+//  if(curPressure - iniPressure >= THRESHOLD){
+//    input = '1';
+//  }
   
   switch(input){
       case '0':
@@ -116,7 +116,7 @@ void overallControl(char input){
         }
         cycles = 0;
         state = 0;
-        Serial.println(1);
+        Serial.println(speedState);
       }
       break;
     case SPEEDUP:
@@ -139,25 +139,25 @@ void overallControl(char input){
           }
           cycles = 0;
           state = 0;
-          Serial.println(1);
+          Serial.println(speedState);
         }
         break;
     }
   }
 }
 
-double pressureMeasure(){
-  double T,P,p0,a;
-
-  pressure.startPressure(3);
-  pressure.getPressure(P,T);
-
-  return P;
-  // Print out the measurement:
-//  Serial.print("absolute pressure: ");
-//  Serial.print(P,2);
-//  Serial.print(" mb, ");
-//  Serial.print(P*0.0295333727,2);
-//  Serial.println(" inHg");
-}
+//double pressureMeasure(){
+//  double T,P,p0,a;
+//
+//  pressure.startPressure(3);
+//  pressure.getPressure(P,T);
+//
+//  return P;
+//  // Print out the measurement:
+////  Serial.print("absolute pressure: ");
+////  Serial.print(P,2);
+////  Serial.print(" mb, ");
+////  Serial.print(P*0.0295333727,2);
+////  Serial.println(" inHg");
+//}
 
