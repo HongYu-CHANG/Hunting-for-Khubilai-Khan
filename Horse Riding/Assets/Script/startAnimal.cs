@@ -19,6 +19,10 @@ public class startAnimal : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.S))
+		{
+			tempStartButton = true;
+		}
 		horse = GameObject.FindWithTag("horse");
 		transform.forward += horse.transform.forward.normalized;
 		if (!isDead) this.transform.position += this.transform.forward.normalized * 5 * Time.deltaTime;

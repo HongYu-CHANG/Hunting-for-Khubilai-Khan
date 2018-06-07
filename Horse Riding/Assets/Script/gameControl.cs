@@ -39,6 +39,15 @@ public class gameControl : MonoBehaviour {
 	{
 		UpdateTime(Time.deltaTime);
 		UpdateUI(Time.deltaTime);
+
+		//Button N: go to yurt scene
+		if (Input.GetKeyDown(KeyCode.N))
+		{
+			StartCoroutine(yurtScene());
+			Debug.Log("Button N: go to yurt scene");
+		}
+
+
 	}
 
 	public void AddScore(string animalName)
@@ -100,7 +109,8 @@ public class gameControl : MonoBehaviour {
 
 		popMessageColor.a -= 0.025f;
 		popMessage.color = popMessageColor;
-		popMessage.text = animalName + " +" + score;
+		if(animalName != "StartAnimal")
+			popMessage.text = "add " + score;
 		if (showPopMessage)
 		{
 			popMessage.rectTransform.localPosition = popMessagePosition;

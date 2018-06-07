@@ -49,25 +49,26 @@ public class horseControl : MonoBehaviour {
 
 	public void StartGame()
 	{
-		Debug.Log("In StartGame");
 		new Thread(Uno.SendData).Start("0");
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-
+		
+		//Button H: horse riding machine control
 		if (Input.GetKeyDown(KeyCode.H))
 		{
-			//new Thread(Uno.SendData).Start("0");
-			Debug.Log("Press H");	
+			if(pressure == 1) new Thread(Uno.SendData).Start("0");
+			Debug.Log("Press H: horse riding machine control");	
 		}
+
 		transform.eulerAngles= new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);//保持馬的水平
 		playerController.transform.position = new Vector3(transform.position.x + XdisOfPlayerAndHorse, transform.position.y + YdisOfPlayerAndHorse, transform.position.z + ZdisOfPlayerAndHorse);
 		//馬的XZ位置需再FOR騎馬機調整
 		//pressure = Uno.ReceiveData();
 		try {
-			//pressure = Uno.ReceiveData();
+			pressure = Uno.ReceiveData();
 		}
 		catch (Exception e)
 		{
@@ -100,8 +101,7 @@ public class horseControl : MonoBehaviour {
 
 	private void closeHorse()
 	{
-		Debug.Log("In closeHorse");
-		new Thread(Uno.SendData).Start("0");
+		if (pressure == 1) new Thread(Uno.SendData).Start("0");
 	}
 	private void OnDestroy()
 	{

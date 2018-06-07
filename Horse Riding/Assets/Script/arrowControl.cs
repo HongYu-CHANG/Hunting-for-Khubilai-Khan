@@ -11,6 +11,11 @@ public class arrowControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+		//Button Esc: close game
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
 	}
 
 	void OnCollisionEnter(Collision collision)

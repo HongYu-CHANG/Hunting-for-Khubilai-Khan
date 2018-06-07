@@ -11,12 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scene/IntroVideo.unity
     guid: 08666f3d921f9584497c586a54b4de76
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Hunt.unity
     guid: 550dae7eeec579a4b80561afcfd34514
   - enabled: 0
-    path: Assets/Scene/Yurt.unity
-    guid: 9638223e9907a464f9a1e779e10fd3b0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scene/Yurt-V2.unity
     guid: 4a03a4b5193ff2745859fdf09bd1b366
