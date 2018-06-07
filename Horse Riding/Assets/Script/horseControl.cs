@@ -47,13 +47,19 @@ public class horseControl : MonoBehaviour {
 		//StartCoroutine(spawnerControl());
 	}
 
+	public void StartGame()
+	{
+		Debug.Log("In StartGame");
+		new Thread(Uno.SendData).Start("0");
+	}
+
 	// Update is called once per frame
 	void Update()
 	{
 
 		if (Input.GetKeyDown(KeyCode.H))
 		{
-			new Thread(Uno.SendData).Start("0");
+			//new Thread(Uno.SendData).Start("0");
 			Debug.Log("Press H");	
 		}
 		transform.eulerAngles= new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);//保持馬的水平
@@ -61,7 +67,7 @@ public class horseControl : MonoBehaviour {
 		//馬的XZ位置需再FOR騎馬機調整
 		//pressure = Uno.ReceiveData();
 		try {
-			pressure = Uno.ReceiveData();
+			//pressure = Uno.ReceiveData();
 		}
 		catch (Exception e)
 		{
@@ -92,8 +98,9 @@ public class horseControl : MonoBehaviour {
 		}
 	}
 
-	public void closeHorse()
+	private void closeHorse()
 	{
+		Debug.Log("In closeHorse");
 		new Thread(Uno.SendData).Start("0");
 	}
 	private void OnDestroy()

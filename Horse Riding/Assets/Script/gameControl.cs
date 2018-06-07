@@ -63,13 +63,12 @@ public class gameControl : MonoBehaviour {
 		introduction.gameObject.SetActive(false);
 		TimerOn = true;
 		NowScore = 0;
-		time = 120;
-		timer_f = 120f;
+		time = 100;
+		timer_f = 100f;
 		labelScore.text = string.Format("{0:D2}", NowScore);
 		scoreGroup.gameObject.SetActive(true);
 		timeGroup.gameObject.SetActive(true);
 		popMessage.gameObject.SetActive(true);
-
 	}
 
 	private void UpdateTime(float num)
@@ -113,7 +112,6 @@ public class gameControl : MonoBehaviour {
 	IEnumerator yurtScene()
 	{
 		yield return new WaitForSeconds(0.8f);
-		GameObject.FindWithTag("horse").GetComponent<horseControl>().closeHorse();
 		float fadeTime = GameObject.Find("Canvas").GetComponent<fading>().BeginFade(1);
 		yield return new WaitForSeconds(fadeTime);
 		SceneManager.LoadScene("Yurt-V2");

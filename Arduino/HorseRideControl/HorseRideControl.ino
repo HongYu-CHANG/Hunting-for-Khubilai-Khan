@@ -2,7 +2,7 @@
 #define SPEED 3
 
 // States
-#define CYCLELENGTH 5000
+#define CYCLELENGTH 10000
 #define SWITCHING 1
 #define SPEEDUP 2
 int state;

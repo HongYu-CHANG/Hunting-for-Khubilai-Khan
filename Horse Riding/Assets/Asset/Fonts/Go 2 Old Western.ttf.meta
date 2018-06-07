@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: cbd19f86cd7d2a047b1808a31316987a
+timeCreated: 1528293440
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Go 2 Old Western
+  fontNames:
+  - Go 2 Old Western
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 589e7560b446464488e943f75a579fb0, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
