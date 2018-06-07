@@ -109,8 +109,11 @@ public class gameControl : MonoBehaviour {
 
 		popMessageColor.a -= 0.025f;
 		popMessage.color = popMessageColor;
-		if(animalName != "StartAnimal")
-			popMessage.text = "add " + score;
+		//Debug.Log(animalName);
+		if(animalName == "StartAnimal")
+			popMessage.text = "";
+		else
+			popMessage.text = "plus " + score;
 		if (showPopMessage)
 		{
 			popMessage.rectTransform.localPosition = popMessagePosition;

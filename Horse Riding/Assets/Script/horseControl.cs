@@ -59,7 +59,7 @@ public class horseControl : MonoBehaviour {
 		//Button H: horse riding machine control
 		if (Input.GetKeyDown(KeyCode.H))
 		{
-			if(pressure == 1) new Thread(Uno.SendData).Start("0");
+			new Thread(Uno.SendData).Start("0");
 			Debug.Log("Press H: horse riding machine control");	
 		}
 

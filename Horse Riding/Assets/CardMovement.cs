@@ -49,7 +49,7 @@ public class CardMovement : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.CompareTag("arrow"))
+		if (collision.gameObject.CompareTag("arrow") && collision.gameObject.transform.parent == GameObject.FindWithTag("horse").transform)
 		{
 			isShot = true;
 		}

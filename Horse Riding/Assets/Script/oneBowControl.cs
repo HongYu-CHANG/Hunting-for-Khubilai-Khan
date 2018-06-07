@@ -49,7 +49,13 @@ public class oneBowControl : MonoBehaviour
 
 	void Update()
 	{
-		
+
+		//Button Esc: close game
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
+
 		nowData = Uno.ReceiveData();
 		//Debug.Log("nowData = " + nowData);
 		float twoDiff = nowData - previousData;
