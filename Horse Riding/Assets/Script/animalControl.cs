@@ -32,7 +32,7 @@ public class animalControl : MonoBehaviour {
 		{
 			Destroy(this.gameObject);
 		}
-		if (this.transform.position.y <= -10)
+		if (this.transform.position.y <= -20)
 		{
 			Destroy(this.gameObject);
 		}
