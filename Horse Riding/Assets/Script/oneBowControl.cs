@@ -17,7 +17,7 @@ public class oneBowControl : MonoBehaviour
 	private GameObject arrowClone;
 
 	public float arrowShootCoefficient = 850;
-
+	public GameObject testCube;
 	//rotary encoder
 	private float previousData;
 	private float nowData;
@@ -32,6 +32,10 @@ public class oneBowControl : MonoBehaviour
 	private bool hasArrow;
 
 	public bool isFirstShot = false;
+
+	//arrow Time
+	public float fireRate = 3F;
+	private float nextFire = 0.0F;
 
 	void Start()
 	{
@@ -55,44 +59,69 @@ public class oneBowControl : MonoBehaviour
 		{
 			Application.Quit();
 		}
-
+		if (Input.GetKeyDown(KeyCode.T))
+		{
+			testCube.gameObject.SetActive(!testCube.gameObject.active);
+		}
 		nowData = Uno.ReceiveData();
+		testCube.transform.localScale = new Vector3(1, nowData * 0.01f, 1);
 		//Debug.Log("nowData = " + nowData);
 		float twoDiff = nowData - previousData;
 		//Debug.Log("twoDiff = " + twoDiff);
 		previousData = nowData;
 		lineRenderer = GetComponent<LineRenderer>();
 
+
+		if (!hasArrow && Time.time > nextFire)
+		{
+			Vector3 arrowPosition = new Vector3(bowMiddle.transform.position.x, bowMiddle.transform.position.y, bowMiddle.transform.position.z);
+			arrowPosition += transform.forward.normalized * 1f;
+			arrowClone = Instantiate(arrow, arrowPosition, bowMiddle.transform.rotation);
+			//Debug.Log("arrowClone = " + arrowClone.transform.position);
+			arrowClone.transform.parent = gameObject.transform;
+			arrowClone.transform.up = bowMiddle.transform.forward;
+			arrowClone.active = true;
+			hasArrow = true;
+		}
 		if (twoDiff == 0)//沒拉弓
 		{
 			if (!hasArrow)
 				bowPositions[1] = bowMiddle.transform.position;
+
+
+			if (Time.time > nextFire)
+			{
+				arrowClone.transform.position -= bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
+				bowPositions[1] = arrowClone.transform.Find("tail").position;
+			}
 		}
 		else if (twoDiff > 20)//拉弓
 		{
-			if (!hasArrow)
-			{
+			//if (!hasArrow && Time.time > nextFire)
+			//{
 
-				//Debug.Log("bowMiddle = " + bowMiddle.transform.position);
-				Vector3 arrowPosition = new Vector3(bowMiddle.transform.position.x, bowMiddle.transform.position.y, bowMiddle.transform.position.z);
-				arrowPosition += transform.forward.normalized * 1f;
-				arrowClone = Instantiate(arrow, arrowPosition, bowMiddle.transform.rotation);
-				//Debug.Log("arrowClone = " + arrowClone.transform.position);
-				arrowClone.transform.parent = gameObject.transform;
-				arrowClone.transform.up = bowMiddle.transform.forward;
-				arrowClone.active = true;
-				hasArrow = true;
-				
+			//	nextFire = Time.time + fireRate;
+			//	Vector3 arrowPosition = new Vector3(bowMiddle.transform.position.x, bowMiddle.transform.position.y, bowMiddle.transform.position.z);
+			//	arrowPosition += transform.forward.normalized * 1f;
+			//	arrowClone = Instantiate(arrow, arrowPosition, bowMiddle.transform.rotation);
+			//	//Debug.Log("arrowClone = " + arrowClone.transform.position);
+			//	arrowClone.transform.parent = gameObject.transform;
+			//	arrowClone.transform.up = bowMiddle.transform.forward;
+			//	arrowClone.active = true;
+			//	hasArrow = true;
+
+			//}
+			if (arrowClone.transform.parent != GameObject.FindWithTag("horse").transform)
+			{
+				arrowClone.transform.position -= bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
+				bowPositions[1] = arrowClone.transform.Find("tail").position;
 			}
-			
-			arrowClone.transform.position -= bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
-			bowPositions[1] = arrowClone.transform.Find("tail").position;
 		}
-		else if (twoDiff < 0 && twoDiff > -80)//緩緩鬆弓
+		else if (twoDiff < 0 && twoDiff > -800)//緩緩鬆弓
 		{
 			if (hasArrow)
 			{
-				
+
 				arrowClone.transform.position += bowMiddle.transform.forward.normalized * ConvertToPullBackCoefficient(twoDiff) * Time.deltaTime;
 				bowPositions[1] = arrowClone.transform.Find("tail").position;
 				if (nowData > -100 && nowData < 100)
@@ -101,17 +130,16 @@ public class oneBowControl : MonoBehaviour
 					hasArrow = false;
 				}
 			}
-			
+
 		}
-		else if( twoDiff < -100 && hasArrow)//射箭
+		else if (twoDiff < -1000 && hasArrow)//射箭
 		{
-			//Debug.LogWarning("isFirstShot = " + isFirstShot);
 			arrowClone.transform.parent = GameObject.FindWithTag("horse").transform;
 			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
 			hasArrow = false;
 			bowPositions[1] = bowMiddle.transform.position;
 			isFirstShot = true;
-			//Debug.LogWarning("isFirstShot = " + isFirstShot);
+			nextFire = Time.time + fireRate;
 		}
 		bowPositions[0] = bowTop.transform.position;
 		bowPositions[2] = bowBot.transform.position;

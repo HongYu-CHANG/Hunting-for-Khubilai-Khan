@@ -66,7 +66,7 @@ public class horseControl : MonoBehaviour {
 		transform.eulerAngles= new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);//保持馬的水平
 		playerController.transform.position = new Vector3(transform.position.x + XdisOfPlayerAndHorse, transform.position.y + YdisOfPlayerAndHorse, transform.position.z + ZdisOfPlayerAndHorse);
 		//馬的XZ位置需再FOR騎馬機調整
-		//pressure = Uno.ReceiveData();
+		//Debug.Log(pressure);
 		try {
 			pressure = Uno.ReceiveData();
 		}
