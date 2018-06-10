@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/Yurt-V2.unity
+- path: Assets/Scene/Hunt.unity
   isLoaded: 1
   isActive: 1

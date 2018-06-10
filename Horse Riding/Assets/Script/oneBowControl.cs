@@ -73,10 +73,10 @@ public class oneBowControl : MonoBehaviour
 			nowData = nowData;
 			Uno.closeSerial();
 			new Thread(Uno.connectToArdunio).Start();
-			Debug.Log("=== Uno 重新連線!!! ===");
+			//Debug.Log("=== Uno 重新連線!!! ===");
 		}
 		testCube.transform.localScale = new Vector3(1, nowData * 0.01f, 1);
-		Debug.Log("nowData = " + nowData);
+		//Debug.Log("nowData = " + nowData);
 		float twoDiff = nowData - previousData;
 		//Debug.Log("twoDiff = " + twoDiff);
 		previousData = nowData;
@@ -128,7 +128,7 @@ public class oneBowControl : MonoBehaviour
 				bowPositions[1] = arrowClone.transform.Find("tail").position;
 			}
 		}
-		else if (twoDiff < 0 && twoDiff > -80)//緩緩鬆弓
+		else if (twoDiff < 0 && twoDiff > -800)//緩緩鬆弓
 		{
 			if (hasArrow)
 			{
@@ -143,7 +143,7 @@ public class oneBowControl : MonoBehaviour
 			}
 
 		}
-		else if (twoDiff < -100 && hasArrow)//射箭
+		else if (twoDiff < -1000 && hasArrow)//射箭
 		{
 			arrowClone.transform.parent = GameObject.FindWithTag("horse").transform;
 			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
