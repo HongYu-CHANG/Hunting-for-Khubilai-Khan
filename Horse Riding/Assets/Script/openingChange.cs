@@ -33,6 +33,14 @@ public class openingChange : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		//Button I: go to introVideo scene
+		if (Input.GetKeyDown(KeyCode.I))
+		{
+			StartCoroutine(VideoScene());
+			Debug.Log("Button I: go to introVideo scene");
+		}
+
+
 		if (counter == frameSegment)
 		{
 			ImageNum++;

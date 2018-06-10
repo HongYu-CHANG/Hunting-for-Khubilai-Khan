@@ -63,9 +63,20 @@ public class oneBowControl : MonoBehaviour
 		{
 			testCube.gameObject.SetActive(!testCube.gameObject.active);
 		}
-		nowData = Uno.ReceiveData();
+		//nowData = Uno.ReceiveData();
+		try
+		{
+			nowData = Uno.ReceiveData();
+		}
+		catch (Exception e)
+		{
+			nowData = nowData;
+			Uno.closeSerial();
+			new Thread(Uno.connectToArdunio).Start();
+			Debug.Log("=== Uno 重新連線!!! ===");
+		}
 		testCube.transform.localScale = new Vector3(1, nowData * 0.01f, 1);
-		//Debug.Log("nowData = " + nowData);
+		Debug.Log("nowData = " + nowData);
 		float twoDiff = nowData - previousData;
 		//Debug.Log("twoDiff = " + twoDiff);
 		previousData = nowData;
@@ -117,7 +128,7 @@ public class oneBowControl : MonoBehaviour
 				bowPositions[1] = arrowClone.transform.Find("tail").position;
 			}
 		}
-		else if (twoDiff < 0 && twoDiff > -800)//緩緩鬆弓
+		else if (twoDiff < 0 && twoDiff > -80)//緩緩鬆弓
 		{
 			if (hasArrow)
 			{
@@ -132,7 +143,7 @@ public class oneBowControl : MonoBehaviour
 			}
 
 		}
-		else if (twoDiff < -1000 && hasArrow)//射箭
+		else if (twoDiff < -100 && hasArrow)//射箭
 		{
 			arrowClone.transform.parent = GameObject.FindWithTag("horse").transform;
 			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
@@ -168,6 +179,7 @@ public class oneBowControl : MonoBehaviour
 		public bool mac = false;
 		public string choice = "cu.usbmodem1421";
 		private SerialPort arduinoController;
+		private float tempNum = 0f;
 
 		public void connectToArdunio()
 		{
@@ -228,6 +240,17 @@ public class oneBowControl : MonoBehaviour
 
 		public float ReceiveData()
 		{
+			/*try
+			{
+				tempNum = float.Parse(arduinoController.ReadLine());
+			}
+			catch (Exception e)
+			{
+				tempNum = tempNum;
+				closeSerial();
+				new Thread(connectToArdunio).Start();
+			}
+			return tempNum;//float.Parse(arduinoController.ReadLine());*/
 			return float.Parse(arduinoController.ReadLine());
 		}
 

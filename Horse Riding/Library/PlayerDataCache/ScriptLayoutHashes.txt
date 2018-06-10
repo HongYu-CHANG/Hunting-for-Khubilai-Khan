@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/liwei/Desktop/TestGame.exe
+C:/Users/liwei/Desktop/Yurt.exe
 SceneListBegin?
 Assets/Scene/Yurt-V2.unity
 SceneListEnd?
@@ -105,6 +105,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Ball.BallUserControl
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Valve.VR.InteractionSystem.InputModule
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.horseControlForYurt
 6c156248975c65e334daa4cbfba64bd1 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.TimedObjectActivator
 0777fcfd6f3d8c384423f91b28c82511 Assembly-CSharp.dll:Valve.VR.InteractionSystem.UIElement
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -120,6 +121,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Valve.VR.InteractionSystem.HideOnHandFocusLost
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.audioController
 30b87a0bd774d61e53c1a0291b6ff61d Assembly-CSharp.dll:.SteamVR_IK
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -284,7 +286,7 @@ ab38f176bfc0dbb7ce3566df8d09a367 Assembly-CSharp.dll:Valve.VR.InteractionSystem.
 aa336d6fedf2162670a2a20eb551b9b7 Assembly-CSharp.dll:.SteamVR_ExternalCamera
 0ad469aca31264c6140b1e503c43ab6b Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.TimedObjectDestructor
 a40330c4eb8bca5c73e00ea35678efd2 Assembly-CSharp.dll:.MoveCamera
-93068dbe4acc7d036469ed561d88f8a6 Assembly-CSharp.dll:.oneBowControl
+0b5797b133d3f4a75691969f954451fa Assembly-CSharp.dll:.oneBowControl
 d52aee9c83b781e1b0ef02aef63ecb20 Assembly-CSharp.dll:Valve.VR.InteractionSystem.IgnoreHovering
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRStandardAssets.Utils.VRFPSCounter
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamVR_UpdatePoses

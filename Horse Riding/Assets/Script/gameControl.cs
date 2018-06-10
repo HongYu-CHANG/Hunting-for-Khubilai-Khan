@@ -47,7 +47,6 @@ public class gameControl : MonoBehaviour {
 			Debug.Log("Button N: go to yurt scene");
 		}
 
-
 	}
 
 	public void AddScore(string animalName)

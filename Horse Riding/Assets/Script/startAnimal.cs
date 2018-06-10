@@ -37,6 +37,10 @@ public class startAnimal : MonoBehaviour {
 		}
 		if (tempStartButton)
 		{
+			_animator.SetTrigger("isShot");
+			isDead = true;
+			StartCoroutine(animalDisappear());
+			print("Start Game");
 			SendMessageUpwards("StartGame");
 			tempStartButton = false;
 		}
