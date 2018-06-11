@@ -47,6 +47,12 @@ public class gameControl : MonoBehaviour {
 			Debug.Log("Button N: go to yurt scene");
 		}
 
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			Application.LoadLevel("Hunt");
+			Debug.Log("Button R: Restart");
+		}
+
 	}
 
 	public void AddScore(string animalName)

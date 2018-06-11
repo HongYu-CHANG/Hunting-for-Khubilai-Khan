@@ -34,21 +34,22 @@ public class oneBowControl : MonoBehaviour
 	public bool isFirstShot = false;
 
 	//arrow Time
-	public float fireRate = 3F;
+	public float fireRate = 2F;
 	private float nextFire = 0.0F;
+	private float temp = 50;
 
 	void Start()
 	{
 		new Thread(Uno.connectToArdunio).Start();
 		previousData = 0;
 		hasArrow = false;
-		lineRenderer = gameObject.AddComponent<LineRenderer>();
-		lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
-		lineRenderer.startColor = Color.white;
-		lineRenderer.endColor = Color.white;
-		lineRenderer.startWidth = 0.01f;
-		lineRenderer.endWidth = 0.01f;
-		lineRenderer.positionCount = numberOfPointsOnBow;
+		//lineRenderer = gameObject.AddComponent<LineRenderer>();
+		//lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
+		//lineRenderer.startColor = Color.white;
+		//lineRenderer.endColor = Color.white;
+		//lineRenderer.startWidth = 0.01f;
+		//lineRenderer.endWidth = 0.01f;
+		//lineRenderer.positionCount = numberOfPointsOnBow;
 	}
 
 	void Update()
@@ -63,7 +64,7 @@ public class oneBowControl : MonoBehaviour
 		{
 			testCube.gameObject.SetActive(!testCube.gameObject.active);
 		}
-		//nowData = Uno.ReceiveData();
+
 		try
 		{
 			nowData = Uno.ReceiveData();
@@ -75,6 +76,26 @@ public class oneBowControl : MonoBehaviour
 			new Thread(Uno.connectToArdunio).Start();
 			//Debug.Log("=== Uno 重新連線!!! ===");
 		}
+		if (Input.GetKey (KeyCode.A)) 
+		{
+			temp = temp + 50;
+			nowData = nowData + temp;
+			//Debug.Log (temp);
+		}
+		else if (Input.GetKeyUp (KeyCode.A)) 
+		{
+			nowData = 0;
+			temp = 50;
+		}
+		if (Input.GetKeyUp (KeyCode.B)) 
+		{
+			Uno.closeSerial();
+			new Thread(Uno.connectToArdunio).Start();
+		}
+
+
+		//Debug.Log("nowData = " + nowData);
+
 		testCube.transform.localScale = new Vector3(1, nowData * 0.01f, 1);
 		//Debug.Log("nowData = " + nowData);
 		float twoDiff = nowData - previousData;
@@ -128,7 +149,7 @@ public class oneBowControl : MonoBehaviour
 				bowPositions[1] = arrowClone.transform.Find("tail").position;
 			}
 		}
-		else if (twoDiff < 0 && twoDiff > -800)//緩緩鬆弓
+		else if (twoDiff < 0 && twoDiff > -80)//緩緩鬆弓
 		{
 			if (hasArrow)
 			{
@@ -143,7 +164,7 @@ public class oneBowControl : MonoBehaviour
 			}
 
 		}
-		else if (twoDiff < -1000 && hasArrow)//射箭
+		else if (twoDiff < -100 && hasArrow)//射箭
 		{
 			arrowClone.transform.parent = GameObject.FindWithTag("horse").transform;
 			arrowClone.GetComponent<Rigidbody>().AddForce(bowMiddle.transform.forward * arrowShootCoefficient);
@@ -186,7 +207,7 @@ public class oneBowControl : MonoBehaviour
 
 			if (connected)
 			{
-				string portChoice = "COM7";
+				string portChoice = "COM4";
 				if (mac)
 				{
 					int p = (int)Environment.OSVersion.Platform;

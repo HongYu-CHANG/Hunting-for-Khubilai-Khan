@@ -63,6 +63,11 @@ public class horseControl : MonoBehaviour {
 			Debug.Log("Press H: horse riding machine control");	
 		}
 
+		if (Input.GetKeyDown(KeyCode.P))
+		{
+			pressure = pressure == 0 ? 1: 0;
+			Debug.Log("Press P: horse speed control");	
+		}
 		transform.eulerAngles= new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);//保持馬的水平
 		playerController.transform.position = new Vector3(transform.position.x + XdisOfPlayerAndHorse, transform.position.y + YdisOfPlayerAndHorse, transform.position.z + ZdisOfPlayerAndHorse);
 		//馬的XZ位置需再FOR騎馬機調整
@@ -74,7 +79,6 @@ public class horseControl : MonoBehaviour {
 		{
             pressure = pressure;
         }
-
         if(pressure != 4)
         {
 	        _animator.SetInteger("horseSpeed", pressure);
@@ -101,7 +105,8 @@ public class horseControl : MonoBehaviour {
 
 	private void closeHorse()
 	{
-		if (pressure == 1) new Thread(Uno.SendData).Start("0");
+		//Debug.Log (pressure);
+		new Thread(Uno.SendData).Start("0");
 	}
 	private void OnDestroy()
 	{
@@ -125,7 +130,7 @@ public class horseControl : MonoBehaviour {
 
 			if (connected)
 			{
-				string portChoice = "COM4";
+				string portChoice = "COM3";
 				if (mac)
 				{
 					int p = (int)Environment.OSVersion.Platform;

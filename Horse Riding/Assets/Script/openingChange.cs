@@ -37,7 +37,7 @@ public class openingChange : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.V))
 		{
 			StartCoroutine(VideoScene());
-			Debug.Log("Button I: go to introVideo scene");
+			Debug.Log("Button V: go to introVideo scene");
 		}
 
 

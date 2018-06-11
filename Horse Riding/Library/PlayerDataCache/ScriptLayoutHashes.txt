@@ -1,7 +1,10 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/liwei/Desktop/Yurt.exe
+C:/Users/GB_NB01/Desktop/HuntGame.exe
 SceneListBegin?
+Assets/Scene/Opening.unity
+Assets/Scene/IntroVideo.unity
+Assets/Scene/Hunt.unity
 Assets/Scene/Yurt-V2.unity
 SceneListEnd?
 94d66fcc029f3d76d1d23d64b29c0644 Assembly-CSharp.dll:.SteamVR_Ears

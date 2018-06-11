@@ -44,7 +44,7 @@ public class horseControlForYurt : MonoBehaviour
 
 			if (connected)
 			{
-				string portChoice = "COM4";
+				string portChoice = "COM3";
 				if (mac)
 				{
 					int p = (int)Environment.OSVersion.Platform;
